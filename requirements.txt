@@ -1,2 +1,5 @@
 lxml # for html processing
 freetype-py # for ttf.py fixing Adobe's "encryption"
+
+# pdf2htmlEX is C++ and on OS X it easiest installs via
+#     brew install pdf2htmlEX
