@@ -1,2 +1,2 @@
 lxml # for html processing
-freetype # for ttf.py fixing Adobe's "encryption"
+freetype-py # for ttf.py fixing Adobe's "encryption"
