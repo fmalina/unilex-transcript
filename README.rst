@@ -11,3 +11,8 @@ Transcript contains Python programs whose job is to transcribe PDF into sematic 
     Batch process a folder full of PDFs ready for transcript.py
 
 Read the docstrings for more information.
+
+Example conversion
+------------------
+before http://reports.ofsted.gov.uk/provider/files/875315/urn/100006.pdf
+after http://schooletc.co.uk/report/96989#reports
