@@ -3,3 +3,5 @@ freetype-py # for ttf.py fixing Adobe's "encryption"
 
 # pdf2htmlEX is C++ and on OS X it easiest installs via
 #     brew install pdf2htmlEX
+# Don't forget to use Python 3.
+#     brew install python3
