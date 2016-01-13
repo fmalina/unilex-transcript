@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-'''
+"""
 Copied text from a PDF and pasted random symbols?
 
 PDF files are sometimes purposely protected from copying,
@@ -26,7 +26,7 @@ The technical reason for random symbols:
 Seemingly random characters are produced when you copy/paste text from PDF
 because the PDF embedded fonts don't use standard unicode character code maps.
 They use Private Use Area unicode range for mapping the glyph indices to codes.
-'''
+"""
 from lxml.html import fromstring, tostring
 import operator
 import string
