@@ -35,7 +35,7 @@ import json
 try:
     from freetype import Face, FT_LOAD_RENDER, FT_LOAD_TARGET_MONO
 except ImportError:
-    print('Requires: pip install freetype-py')
+    print('Requires: pip3 install freetype-py')
 try:
     from config import FULL_FONTS_PATH
 except ImportError:
