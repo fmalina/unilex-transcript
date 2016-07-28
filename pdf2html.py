@@ -11,14 +11,14 @@ import glob, os, time, multiprocessing
 import config
 
 def pdf2html(pdf_path):
-    no = pdf_path.split('/')[-1].replace('.pdf','')
+    fn = pdf_path.split('/')[-1].replace('.pdf','')
     # --embed cfijo = don't embed Css, Fonts, Images, Js, Outlines (> man pdf2htmlEX)
     os.system('pdf2htmlEX --embed-external-font 0\
                           --external-hint-tool ttfautohint\
                           --process-nontext 0\
                           --embed cfijo\
                           --dest-dir %s/%s\
-                          %s %s.html' % (config.HTML_DIR, no, pdf_path, no))
+                          %s %s.html' % (config.HTML_DIR, fn, pdf_path, fn))
     time.sleep(.2)
 
 if __name__ == '__main__':
