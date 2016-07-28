@@ -23,4 +23,3 @@ REPLACE_AFTER = (
 # Additional bullet point characters to be expected at start of line for <li>
 # Copied out of the processsed PDF. Common bullets are pre-programmed.
 BULLETS =  ('', '')
-
