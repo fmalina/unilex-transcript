@@ -367,4 +367,5 @@ def batch_process(docs, limit=None):
             continue
 
 if __name__ == '__main__':
-    batch_process(HTML_DIR + '/*_*/*_*.html', limit=None)
+    os.makedirs(HTML_DIR.replace('HTML', 'HTM'), exist_ok=True)
+    batch_process(HTML_DIR + '/*/*.html', limit=None)
