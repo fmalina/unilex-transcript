@@ -23,4 +23,4 @@ def pdf2html(pdf_path):
 
 if __name__ == '__main__':
     p = multiprocessing.Pool(4)
-    print(p.map(pdf2html, glob.glob(config.PDF_DIR + '/*_*.pdf')))
+    print(p.map(pdf2html, glob.glob(config.PDF_DIR + '/*.pdf')))
