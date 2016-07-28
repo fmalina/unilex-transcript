@@ -45,9 +45,9 @@ drop your PDFs there.
 
 * PDF is a folder where your PDFs are.
 * HTML is where pdf2htmlEX output (non-semantic HTML) ends up after running
-``./pdf2html.py``, which just runs pdf2htmlEX with suitable options.
+  ``./pdf2html.py``, which just runs pdf2htmlEX with suitable options.
 * HTM is the final destination where semantic HTML gets born after running
-``./transcript.py``.
+  ``./transcript.py``.
 
 Run
 ---
