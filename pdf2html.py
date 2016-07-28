@@ -22,5 +22,6 @@ def pdf2html(pdf_path):
     time.sleep(.2)
 
 if __name__ == '__main__':
+    os.makedirs(config.HTML_DIR, exist_ok=True)
     p = multiprocessing.Pool(4)
     print(p.map(pdf2html, glob.glob(config.PDF_DIR + '/*.pdf')))
