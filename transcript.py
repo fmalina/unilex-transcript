@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-#-*-coding:utf-8-*- 
 """
 Get semantic HTML from PDFs converted by pdf2htmlEX.
 
@@ -28,7 +27,6 @@ import types
 import re
 import glob
 import os.path
-import sys
 
 DEBUG = 0
 MIN_SPAN_SIZE = 8 # remove spans less then this width (in px)
@@ -56,6 +54,7 @@ REMOVE_AFTER = (
 )
 REPLACE_AFTER = ()
 HTML_DIR  = './'
+ENCODING = 'UTF-8'
 
 try:
     import config
@@ -208,8 +207,8 @@ def reconstruct_tables(dom, data):
     return dom
 
 def prepare(doc_path):
-    doc = s = open(doc_path,'rt',encoding='utf-8').read()
-    css =     open(doc_path.replace('.html', '.css'),'rt',encoding='utf-8').read()
+    doc = s = open(doc_path, 'rt', encoding=ENCODING).read()
+    css =     open(doc_path.replace('.html', '.css'), 'rt', encoding=ENCODING).read()
     
     for rm in REMOVE_BEFORE:
         s = re.sub(rm, '', s)
@@ -341,7 +340,7 @@ def semanticize(doc_path='test.html'):
                 except KeyError: pass
     
     # save file
-    html = tostring(dom, encoding='UTF-8', pretty_print=True).decode('UTF-8')
+    html = tostring(dom, encoding=ENCODING, pretty_print=True).decode(ENCODING)
     s = '<!DOCTYPE html>' + html
     for a,b in REPLACE_AFTER:
         s = re.sub(a, b, s)
@@ -353,7 +352,7 @@ def semanticize(doc_path='test.html'):
         for rm in REMOVE_BEFORE:
             s = re.sub(rm, '', s)
     save_path = os.path.dirname(doc_path.replace('HTML', 'HTM')) + '.htm'
-    f = open(save_path, 'w', encoding='UTF-8')
+    f = open(save_path, 'w', encoding=ENCODING)
     f.write(s)
     f.close()
 
