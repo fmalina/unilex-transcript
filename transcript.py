@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#-*-coding:utf-8-*- 
 """
 Get semantic HTML from PDFs converted by pdf2htmlEX.
 
@@ -27,6 +28,7 @@ import types
 import re
 import glob
 import os.path
+import sys
 
 DEBUG = 0
 MIN_SPAN_SIZE = 8 # remove spans less then this width (in px)
@@ -206,8 +208,8 @@ def reconstruct_tables(dom, data):
     return dom
 
 def prepare(doc_path):
-    doc = s = open(doc_path).read()
-    css =     open(doc_path.replace('.html', '.css')).read()
+    doc = s = open(doc_path,'rt',encoding='utf-8').read()
+    css =     open(doc_path.replace('.html', '.css'),'rt',encoding='utf-8').read()
     
     for rm in REMOVE_BEFORE:
         s = re.sub(rm, '', s)
@@ -351,7 +353,7 @@ def semanticize(doc_path='test.html'):
         for rm in REMOVE_BEFORE:
             s = re.sub(rm, '', s)
     save_path = os.path.dirname(doc_path.replace('HTML', 'HTM')) + '.htm'
-    f = open(save_path, 'w')
+    f = open(save_path, 'w', encoding='UTF-8')
     f.write(s)
     f.close()
 
