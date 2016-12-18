@@ -238,7 +238,7 @@ def heading_levels(dom, dimensions):
         level += 1
     return h_levels
 
-def semanticize(doc_path='test.html'):
+def semanticize(doc_path):
     """
     P: unbroken set of lines (.t divs) of the same look make one <p>
     H1-3: Top 3 kinds of font size are turned to h1, h2 and h3.
