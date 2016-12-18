@@ -5,7 +5,7 @@ Batch processes a folder full of PDFs using pdf2htmlEX
 producing a HTML folder.
 
 This HTML uses just CSS positioning for layout. We need
-further work to add sematic tags: transcript.py 
+further work to add sematic tags: transcript.py
 """
 import glob, os, time, multiprocessing
 import config

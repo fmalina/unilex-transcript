@@ -7,7 +7,7 @@ Get semantic HTML from PDFs converted by pdf2htmlEX.
   * headings
   * lists
   * tables
-  
+
 - Allows to remove repetitive headers (and footers) from each page
   based on common pattern repeated accross topmost elements
   producing a continuous as opposed to a paged document.
@@ -145,15 +145,15 @@ def grid_data(dom, get_dimension):
         # collect elements and their coordinates for ordering
         # if text box (.t) has a parent clip box (.c) this affects actual coordinates
         cb = parent(l) if parent(l).attrib.get('class', '').startswith('c ') else None
-        
+
         # collect data enriched with actual x and y coords
         x = get_dimension(l, 'x') # left
         y = get_dimension(l, 'y') + get_dimension(l, 'h') # bottom
-        
+
         if exists(cb): # adjust for the clip box coordinates
             x = get_dimension(cb, 'x') + x
             y = get_dimension(cb, 'y')
-        
+
         paper_height = 850 # height of A4 page in px
         y = paper_height - y # turn bottom position into top
         data.append(
@@ -171,10 +171,10 @@ def reconstruct_tables(dom, data):
         # create row lists(y) and clipbox groups(x)
         rows.setdefault(key,         []).append(c)
         cboxes.setdefault(c.clipbox, []).append(c.elem)
-    
+
     from pprint import pprint
     # pprint(rows)
-    
+
     # collect cell lines with same clip boxes
     merged = []
     for key, row in rows.items():
@@ -184,7 +184,7 @@ def reconstruct_tables(dom, data):
             else:
                 cell.lines = cboxes[cell.clipbox]
                 merged.append(cell.clipbox)
-    
+
     for row in rows.values():
         # hardly a table row if there is only one non-empty element in it at the start of a line
         if len([c for c in row if c.text]) > 1:
@@ -202,30 +202,30 @@ def reconstruct_tables(dom, data):
     for e in dom.iter():
         if e.tag in ('span','div') and not e.text_content() or e.text_content() == ' ':
             e.drop_tag()
-    
+
     wrap_set(dom, 'tr', 'table')
     return dom
 
 def prepare(doc_path):
     doc = s = open(doc_path, 'rt', encoding=ENCODING).read()
     css =     open(doc_path.replace('.html', '.css'), 'rt', encoding=ENCODING).read()
-    
+
     for rm in REMOVE_BEFORE:
         s = re.sub(rm, '', s)
-    
+
     # round pixel sizes to whole pixels
     for no in re.findall(r'(\d{1,3}\.\d{6})px;', css):
         css = css.replace(no, str(int(round(float(no)))))
-    
+
     dimensions = {x: css_sizes(x, css) for x in '_ fs h x y'.split()}
-    
+
     # remove spacing spans of very small width
     span_sizes = dimensions['_'].items()
     for no, size in span_sizes:
         if int(size) < MIN_SPAN_SIZE:
             span = '<span class="_ _%s"> </span>' % no
             s = s.replace(span, '')
-    
+
     dom = fromstring(s)
     return dom, dimensions
 
@@ -251,31 +251,31 @@ def semanticize(doc_path='test.html'):
     print(doc_path)
     dom, dimensions = prepare(doc_path)
     get_dimension = lambda el, dim_type: dimensions[dim_type].get(classN(dim_type, el)) or 0
-    
+
     # recover text from embedded fonts with bad CMAPS if > 50% of characters are unicode PUA
     recover = pua_content(dom.text_content()) > 0.5
     if recover:
         print('Recovery needed, not now.')
         return
         recover_text(dom, os.path.dirname(doc_path))
-    
+
     # remove paging headers
     if REMOVE_HEADERS:
         dom = remove_headers(dom)
-    
+
     # remove javascript holders
     for div in dom.cssselect('.j'):
         remove(div)
-    
+
     if TABLES:
         table_data = grid_data(dom, get_dimension)
         dom = reconstruct_tables(dom, table_data)
-    
+
     h_levels = heading_levels(dom, dimensions)
-    
+
     # line by line analysis and conversion
     p_look = p_height = p_space = p_tag = box = 0
-    
+
     for l in dom.cssselect('.t'):
         # Gather information about this line to see if it's part of a block.
         # 1. detect change of look - different css classes from previous line
@@ -287,14 +287,14 @@ def semanticize(doc_path='test.html'):
         margin = line_height > MAX_LINE_HEIGHT
         # 3. space above - preceding empty line
         space = not l.text_content().strip()
-        
+
         # Based on collected info: does this line belong to previous line?
         append = new_look == p_space == margin == False
-        
+
         txt = l.text_content()
-        
+
         tag = 'p'
-        
+
         # LI
         indent = 'x0' not in look # there is some indentation
         if [1 for b in BULLETS if txt.startswith(b)]:
@@ -308,7 +308,7 @@ def semanticize(doc_path='test.html'):
         if size in h_levels.keys():
             append = 0
             tag = 'h%s'% h_levels[size]
-        
+
         # merge multiline-elements
         if txt.strip():
             if append:
@@ -319,18 +319,18 @@ def semanticize(doc_path='test.html'):
                 l.tag = tag
         else:
             remove(l)
-        
+
         if DEBUG:
             mark = ('<%s>' % tag).ljust(5)
             if append: mark = 5*' '
             print(' Aa %d    ⇪ %d    ⇕ % 3d    %s    %s    %s' %\
                 (new_look, p_space, line_height, l.attrib['class'].ljust(40), mark, txt))
-        
+
         # save current values for comparison in the next loop iteration
         p_space, p_height, p_look, p_tag = space, height, look, tag
-    
+
     wrap_set(dom, 'li', 'ul')
-    
+
     if STRIP_CSS:
         for e in dom.cssselect("style"):
             remove(e)
@@ -338,7 +338,7 @@ def semanticize(doc_path='test.html'):
             for e in dom.cssselect("*"):
                 try: del e.attrib[attr]
                 except KeyError: pass
-    
+
     # save file
     html = tostring(dom, encoding=ENCODING, pretty_print=True).decode(ENCODING)
     s = '<!DOCTYPE html>' + html
@@ -346,7 +346,7 @@ def semanticize(doc_path='test.html'):
         s = re.sub(a, b, s)
     for rm in REMOVE_AFTER:
         s = re.sub(rm, '', s)
-    for b in BULLETS: 
+    for b in BULLETS:
         s = s.replace(b, '')
     if recover:
         for rm in REMOVE_BEFORE:

@@ -170,7 +170,7 @@ if __name__ == '__main__':
     import transcript
     import config
     import os.path
-    
+
     doc_path = config.HTML_DIR + '/100026_945655/100026_945655.html'
     dom, css = transcript.prepare(doc_path)
     recover_text(dom, os.path.dirname(doc_path))
