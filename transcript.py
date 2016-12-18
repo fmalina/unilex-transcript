@@ -83,8 +83,7 @@ CSS_CLASS_MAP = { # pdf2htmlEX convention for CSS class names and corresponding 
 parent = lambda e: e.getparent()
 exists = lambda e: e is not None
 remove = lambda e: parent(e).remove(e)
-# insert element just after another one
-insert = lambda e, a: parent(a).insert(parent(a).index(a)+1, e)
+insertAfter = lambda e, a: parent(a).insert(parent(a).index(a) + 1, e)
 # cut CSS class hex number out of HTML element's class attribute
 classN = lambda class_, el: el.attrib['class'].split(' ' + class_)[1].split()[0]
 
@@ -109,7 +108,7 @@ def wrap_set(dom, child_tag, parent_tag):
     for e in dom.cssselect(child_tag):
         if nxt != e:
             box = Element(parent_tag)
-            insert(box, e)
+            insertAfter(box, e)
         box.append(e)
         nxt = parent(e).getnext()
         if nxt is None:
