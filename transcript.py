@@ -171,9 +171,6 @@ def reconstruct_tables(dom, data):
         rows.setdefault(key,         []).append(c)
         cboxes.setdefault(c.clipbox, []).append(c.elem)
 
-    from pprint import pprint
-    # pprint(rows)
-
     # collect cell lines with same clip boxes
     merged = []
     for key, row in rows.items():
