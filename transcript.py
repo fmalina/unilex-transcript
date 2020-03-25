@@ -167,7 +167,7 @@ def reconstruct_tables(dom, data):
     cboxes = {}
     for c in sorted(data, key=lambda c: (c.page, c.y, c.x)):
         # combine page number and row position to get a useful key
-        key = '%d,%d' % (c.page, c.y)
+        key = f'{c.page:d},{c.y:d}'
         # create row lists(y) and clipbox groups(x)
         rows.setdefault(key,         []).append(c)
         cboxes.setdefault(c.clipbox, []).append(c.elem)
@@ -223,7 +223,7 @@ def prepare(doc_path):
     span_sizes = dimensions['_'].items()
     for no, size in span_sizes:
         if int(size) < MIN_SPAN_SIZE:
-            span = '<span class="_ _%s"> </span>' % no
+            span = f'<span class="_ _{no}"> </span>'
             s = s.replace(span, '')
     
     dom = fromstring(s)
@@ -307,7 +307,7 @@ def semanticize(doc_path='test.html'):
         size = classN('fs', l)
         if size in h_levels.keys():
             append = 0
-            tag = 'h%s'% h_levels[size]
+            tag = f'h{h_levels[size]}'
         
         # merge multiline-elements
         if txt.strip():
@@ -321,7 +321,7 @@ def semanticize(doc_path='test.html'):
             remove(l)
         
         if DEBUG:
-            mark = ('<%s>' % tag).ljust(5)
+            mark = (f'<{tag}>').ljust(5)
             if append: mark = 5*' '
             print(' Aa %d    ⇪ %d    ⇕ % 3d    %s    %s    %s' %\
                 (new_look, p_space, line_height, l.attrib['class'].ljust(40), mark, txt))
