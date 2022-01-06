@@ -18,8 +18,8 @@ Read the docstrings for more information.
 Example
 -------
 
-`PDF before <https://fmalina.github.io/unilex-transcript/tests/PDF/report-100006.pdf>`_ and
-`semantic HTML after <https://fmalina.github.io/unilex-transcript/tests/HTM/report-100006.htm>`_
+`PDF before <https://fmalina.github.io/unilex-transcript/tests/PDF/report-1967329.pdf>`_ and
+`semantic HTML after <https://fmalina.github.io/unilex-transcript/tests/HTM/report-1967329.htm>`_
 
 Install
 --------
