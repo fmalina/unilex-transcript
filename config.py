@@ -1,13 +1,24 @@
+"""
+Set your environment variables for DATA_DIR and FULL_FONTS_PATH
+in your .env file, e.g.: DATA_DIR=/path/to/your/data/dir/
+"""
+
+import os
+import os.path
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # This is your project root, configure your own path.
-DATA_DIR = '/Users/f/DATA/OFSTED/'
+DATA_DIR = os.getenv('DATA_DIR', '/path/to/your/data/dir/')
 
 # PDF folder within your project root. PDFs to convert come from here.
 PDF_DIR  = DATA_DIR+'PDF'
 # HTML folder is where pdf2htmlEX outputs (non-semantic HTML) after running `./pdf2html.py`.
 HTML_DIR = DATA_DIR+'HTML'
 # used by ttf.py to access full original fonts to compare with the broken ones
-FULL_FONTS_PATH  = '/Users/f/SITES/etc/ttf'
-# remove mumbo-jumbo TEXT strings before HTML processing (REGEXes or text)
+FULL_FONTS_PATH = os.getenv('FULL_FONTS_PATH', '/path/to/truetype/fonts/')
+# remove mumbo-jumbo TEXT strings before HTML processing (regexes or text)
 REMOVE_BEFORE = (
     r'The Office for Standards.*?www\.ofsted\.gov\.uk',
     r'Any complaints.*?\@ofsted\.gov\.uk',
