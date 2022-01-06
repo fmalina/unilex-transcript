@@ -69,7 +69,7 @@ You only need to run ``./transcript.py``
 
 Development process
 -------------------
-Add expected (hand-adjusted) output to aim for to the test suite and
+Set expected (hand-adjusted) output to aim for and
 improve codebase to get transcript output closer to the ideal semantic output.
 
 Dual Licensing
