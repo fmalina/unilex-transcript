@@ -4,11 +4,13 @@ import config
 import os
 import os.path
 
+
 def preview(i):
     path = config.HTML_DIR + f'/{i}/{i}.html'
     transcript.semanticize(path)
     result = os.path.dirname(path).replace('HTML', 'HTM')+'.htm'
     os.system('open -a safari file://' + result)
+
 
 preview('100006_1967329')
 preview('100008_2457093')
