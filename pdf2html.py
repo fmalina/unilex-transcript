@@ -8,16 +8,18 @@ This HTML uses just CSS positioning for layout. We need
 further work to add semantic tags: transcript.py
 """
 import glob
+import multiprocessing
 import os
 import time
-import multiprocessing
+from pathlib import Path
+
 import config
 
 
 def pdf2html(pdf_path):
     """Generates a long command"""
 
-    fn = pdf_path.split('/')[-1].replace('.pdf', '')
+    fn = Path(pdf_path).name.replace('.pdf', '')
     # --embed cfijo = don't embed Css, Fonts, Images, Js, Outlines
     # > man pdf2htmlEX
     if config.DOCKER_INSTALL:
