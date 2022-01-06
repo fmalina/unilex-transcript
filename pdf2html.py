@@ -2,17 +2,22 @@
 """
 PDF to HTML conversion - first step of the process.
 Batch processes a folder full of PDFs using pdf2htmlEX
-producing a HTML folder.
+producing an HTML folder.
 
 This HTML uses just CSS positioning for layout. We need
-further work to add sematic tags: transcript.py 
+further work to add semantic tags: transcript.py
 """
-import glob, os, time, multiprocessing
+import glob
+import os
+import time
+import multiprocessing
 import config
 
+
 def pdf2html(pdf_path):
-    fn = pdf_path.split('/')[-1].replace('.pdf','')
-    # --embed cfijo = don't embed Css, Fonts, Images, Js, Outlines (> man pdf2htmlEX)
+    fn = pdf_path.split('/')[-1].replace('.pdf', '')
+    # --embed cfijo = don't embed Css, Fonts, Images, Js, Outlines
+    # > man pdf2htmlEX
     os.system('pdf2htmlEX --embed-external-font 0\
                           --external-hint-tool ttfautohint\
                           --process-nontext 0\
@@ -20,6 +25,7 @@ def pdf2html(pdf_path):
                           --dest-dir %s/%s\
                           %s %s.html' % (config.HTML_DIR, fn, pdf_path, fn))
     time.sleep(.2)
+
 
 if __name__ == '__main__':
     os.makedirs(config.HTML_DIR, exist_ok=True)
