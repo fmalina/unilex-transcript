@@ -67,6 +67,10 @@ Run
 When you change configuration within ``./transcript.py`` or tweak some code.
 You only need to run ``./transcript.py``
 
+Development process
+-------------------
+Add expected (hand-adjusted) output to aim for to the test suite and
+improve codebase to get transcript output closer to the ideal semantic output.
 
 Dual Licensing
 --------------
