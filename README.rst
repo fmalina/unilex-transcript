@@ -15,7 +15,7 @@ Transcript contains Python programs whose job is to transcribe PDF into sematic 
 
 Read the docstrings for more information.
 
-Example 
+Example
 -------
 
 - before http://reports.ofsted.gov.uk/provider/files/875315/urn/100006.pdf
@@ -25,19 +25,23 @@ Example
 Install
 --------
 Get Python 3 installed along with latest pdf2htmlEX.
-e.g. with Homebrew:
+e.g. with Homebrew (docker install of pdf2htmlEX is also supported):
 
     brew install python3 pdf2htmlEX
 
 Install lxml under python3 ``pip3 install lxml`` or just run the following and get freetype-py too.
-    
+
     pip3 install -r requirements.txt
 
 Configure
 ---------
-Configure your project path in ``config.py`` **most importantly the DATA_DIR on top**.
-This can be any folder let's say ``/Users/[your username]/Desktop/transcript-data``.
-Go ahead create it.
+Configure your project path in your ``.env`` file and ``config.py``
+**most importantly the DATA_DIR**.
+This can be any folder let's say ``DATA_DIR=/path/to/unilex-transcript/tests``.
+If you use a docker install of pdf2htmlEX, you'll need to set ``DOCKER_INSTALL=1``
+This will mount your data dir to Docker path. ``DOCKER_IMG_TAG`` is also configurable.
+See config.py for default.
+Go ahead create your ``.env`` file and add ``DATA_DIR=...``
 
 Your DATA_DIR should end up containing 3 folders: PDF, HTML and HTM if you
 otherwise stick with default configuration. Create a 'PDF' folder inside and

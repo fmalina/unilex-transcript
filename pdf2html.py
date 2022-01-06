@@ -15,19 +15,32 @@ import config
 
 
 def pdf2html(pdf_path):
+    """Generates a long command"""
+
     fn = pdf_path.split('/')[-1].replace('.pdf', '')
     # --embed cfijo = don't embed Css, Fonts, Images, Js, Outlines
     # > man pdf2htmlEX
-    os.system('pdf2htmlEX --embed-external-font 0\
-                          --external-hint-tool ttfautohint\
-                          --process-nontext 0\
-                          --embed cfijo\
-                          --dest-dir %s/%s\
-                          %s %s.html' % (config.HTML_DIR, fn, pdf_path, fn))
+    if config.DOCKER_INSTALL:
+        pdf2htm = f"docker run -ti --rm -v {config.DATA_DIR}:/pdf -w /pdf {config.DOCKER_IMG_TAG}"
+        out_dir = '/pdf/HTML'
+        pdf_path = pdf_path.replace(config.PDF_DIR, '/pdf/PDF')
+        hint = ""
+    else:
+        pdf2htm = 'pdf2htmlEX'
+        out_dir = config.HTML_DIR
+        hint = " --external-hint-tool ttfautohint"
+
+    cmd = (f"{pdf2htm} --embed-external-font 0 {hint}"
+           " --process-nontext 0 --embed cfijo"
+           f" --dest-dir {out_dir}/{fn} {pdf_path} {fn}.html")
+    print()
+    print(cmd)
+    os.system(cmd)
     time.sleep(.2)
 
 
 if __name__ == '__main__':
     os.makedirs(config.HTML_DIR, exist_ok=True)
     p = multiprocessing.Pool(4)
-    print(p.map(pdf2html, glob.glob(config.PDF_DIR + '/*.pdf')))
+    pdfs = glob.glob(config.PDF_DIR + '/*.pdf')
+    p.map(pdf2html, pdfs)

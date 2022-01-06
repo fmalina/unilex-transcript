@@ -1,0 +1,2186 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+
+
+ <h1>Compact, High Efficiency, High Power, </h1>
+<h1>Flash/Torch LED Driver with Dual Interface </h1>
+<h1>ADP1653</h1>  <p>Rev. B </p>
+<p>Information furnished by Analog Devices is believed to be accurate and reliable. However, no </p>
+<p>responsibility is assumed by Analog Devices for its use, nor for any infringements of patents or other </p>
+<p>rights of third parties that may result from its use. Specifications subject to change without notice. No </p>
+<p>license is granted by implication or otherwise under any patent or patent rights of Analog Devices. </p>
+<p>Trademarks and registered trademarks are the property of their respective owners. </p>   <p>One Technology Way, P.O. Box 9106, Norwood, MA 02062-9106, U.S.A.</p>
+<p>Tel: 781.329.4700  www.analog.com </p>
+<p>Fax: 781.461.3113  ©2007 Analog Devices, Inc. All rights reserved. </p>
+<h4>FEATURES </h4>
+<p>Small 6.4 mm × 7.2 mm solution </p>
+<p>2.2 H power inductor </p>
+<p>92% peak efficiency </p>
+<p>Tx masking within 50 s </p>
+<p>2.1 A, 12 V power switch </p>
+<p>Pin-selectable interface: 2-bit logic or I</p>
+<p>2</p>
+<p>C </p>
+<p>Programmable flash and torch current </p>
+<p>Up to 200 mA in torch mode <br>Up to 500 mA in flash mode </p>
+<p>Programmable indicator LED current up to 20 mA </p>
+<p>Programmable timer register: up to 820 ms flash timeout </p>
+<p>2.75 V to 5.5 V input voltage range </p>
+<p>Low noise, 1.2 MHz PWM operation </p>
+<p>Safety features </p>
+<p>Interrupt output pin </p>
+<p>Fault condition register </p>
+<p>Short-circuit protection </p>
+<p>Output overvoltage protection </p>
+<p>Thermal overload protection </p>
+<p>Integrated current limit and soft start </p>
+<p>Small 3 mm × 3 mm, 16-lead LFCSP footprint </p>
+<h4>APPLICATIONS </h4>
+<p>Camera-enabled cellular phones, smart phones </p>
+<p>Digital still cameras, camcorders, PDAs </p>
+<h4>GENERAL DESCRIPTION </h4>
+<p>The ADP1653 is a very compact, high efficiency, high power, </p>
+<p>camera flash LED driver optimized for cellular phones. The </p>
+<p>high efficiency and dynamic LED current control of the device </p>
+<p>improve flash brightness and picture quality in dimly lit </p>
+<p>environments. Efficiency peaks at 92% and is higher than </p>
+<p>charge pump solutions over the Li-Ion battery range. </p>
+<p>The device has a dual-mode interface that is configurable to 2-bit </p>
+<p>logic or an I</p>
+<p>2</p>
+<p>C® interface. The indicator and high power LED </p>
+<p>currents are programmable with external resistors or through the </p>
+<p>I</p>
+<p>2</p>
+<p>C interface. To maximize overall flash brightness, the ADP1653 </p>
+<p>offers an input to reduce flash LED current in less than 50 µs, </p>
+<p>referred to as the Tx mask. Tx masking reduces battery stress by </p>
+<p>scaling back flash LED current during an RF transmission.  </p>
+<p>The ADP1653 solution requires only four external components </p>
+<p>in I</p>
+<p>2</p>
+<p>C mode and fits in a 6.4 mm × 7.2 mm space. The part inte-</p>
+<p>grates multiple safety features such as soft start, flash timeout, </p>
+<p>output current limit, thermal protection, and overvoltage </p>
+<p>protection.  </p>
+<p>The ADP1653 operates over the −40°C to +125°C junction </p>
+<p>temperature range. </p>   <h4>TYPICAL OPERATING CIRCUIT </h4>
+<p>16 15 14 13</p>
+<p>5 6 7 8</p>
+<p>12<br>11<br>10</p>
+<p>9</p>
+<p>1<br>2<br>3<br>4</p>
+<p>ADP1653</p>
+<p>4.7µF</p>
+<p>4.7µF</p>
+<p>ONE</p>
+<p>OR</p>
+<p>TWO</p>
+<p>LEDs</p>
+<p>UP TO 10.2V</p>
+<p>2.2µH</p>
+<p>INPUT VOLTAGE = 2.75V TO 5.5V</p>
+<p>V</p>
+<p>DD</p>
+<p>TxMASK</p>
+<p>OPTIONAL</p>
+<p>SETT<br>SETF</p>
+<p>CTRL1/SCL<br>CTRL0/SDA</p>
+<p>EN</p>
+<p>STR</p>
+<p>V</p>
+<p>DD</p>
+<p>LX</p>
+<p>SETI</p>
+<p>ILED</p>
+<p>OUT</p>
+<p>GND</p>
+<p>PGND</p>
+<p>INTF</p>
+<p>HPLED</p>
+<p>INT</p>
+<p>06180-001</p>
+<p>OFF</p>
+<p>ON</p>
+<p>OFF</p>
+<p>ON</p> <p>Figure 1. </p>
+<h4>PCB LAYOUT </h4>
+<p>ADP1653</p>
+<p>R5<br>R4</p>
+<p>D1</p>
+<p>C1</p>
+<p>C2</p>
+<p>INDUCTOR</p>
+<p>LI-ION +</p>
+<p>GND</p>
+<p>L1</p>
+<p>INPUT CAPACITOR</p>
+<p>OUTPUT CAPACITOR</p>
+<p>SCHOTTKY DIODE</p>
+<p>PGND</p>
+<p>7.2mm</p>
+<p>TO WHITE</p>
+<p>LEDs</p>
+<p>FROM WHITE</p>
+<p>LEDs</p>
+<p>L = FDSE0312-2R2</p>
+<p>CIN = GRM219R61A475K</p>
+<p>D1 = BAT20J</p>
+<p>COUT = GRM21BR61C475K</p>
+<p>6.4mm</p>
+<p>OPTIONAL (Tx MASK ONLY)</p>
+<p>0</p>
+<p>6180-036</p> <p>Figure 2. </p>
+
+ <p>Rev. B | Page 2 of 24 </p>
+<h2>TABLE OF CONTENTS </h2>
+<p>Features .............................................................................................. 1 </p>
+<p>Applications....................................................................................... 1 </p>
+<p>General Description ......................................................................... 1 </p>
+<p>Typical Operating Circuit ................................................................ 1 </p>
+<p>PCB Layout........................................................................................ 1 </p>
+<p>Revision History ............................................................................... 2 </p>
+<p>Specifications..................................................................................... 3 </p>
+<p>I</p>
+<p>2</p>
+<p>C Timing Specifications............................................................ 5 </p>
+<p>Absolute Maximum Ratings............................................................ 6 </p>
+<p>Thermal Resistance ...................................................................... 6 </p>
+<p>Boundary Condition.................................................................... 6 </p>
+<p>ESD Caution.................................................................................. 6 </p>
+<p>Pin Configuration and Function Descriptions............................. 7 </p>
+<p>Typical Performance Characteristics ..............................................9 </p>
+<p>Theory of Operation ...................................................................... 13 </p>
+<p>White LED Driver...................................................................... 13 </p>
+<p>2-Bit Logic Interface Mode (INTF = 1)................................... 14 </p>
+<p>I</p>
+<p>2</p>
+<p>C Interface Mode (INTF = 0)................................................. 14 </p>
+<p>Turning on the Flash and Watchdog Timer ........................... 15 </p>
+<p>Safety Features ............................................................................ 16 </p>
+<p>Applications Information.............................................................. 17 </p>
+<p>Flash Current Foldback During Transmit Pulse.................... 17 </p>
+<p>External Component Selection ................................................ 18 </p>
+<p>PCB Layout ................................................................................. 20 </p>
+<p>Outline Dimensions ....................................................................... 22 </p>
+<p>Ordering Guide .......................................................................... 22 </p> <h4>REVISION HISTORY </h4>
+<p>9/07—Rev. A to Rev. B </p>
+<p>Changes to Table 1............................................................................ 3 <br>Changes to Table 5............................................................................ 7 </p>
+<p>Changes to I</p>
+<p>2</p>
+<p>C Interface Mode (INTF = 0) Section .................. 14 </p>
+<p>Changes to Safety Features Section .............................................. 16 </p>
+<p>Inserted Table 9 and Table 10........................................................ 18 <br>Inserted Table 11 and Table 12...................................................... 19  </p>
+<p>1/07—Revision A: Initial Version </p> 
+ <p>Rev. B | Page 3 of 24 </p>
+<h2>SPECIFICATIONS </h2>
+<p>V</p>
+<p>DD</p>
+<p> = 3.0 V to 5.5 V, T</p>
+<p>J</p>
+<p> = −40°C to +125°C, unless otherwise noted.</p>
+<p>1</p>
+<p>Table 1.  </p>
+<p>Parameter Conditions Min Typ Max Unit </p>
+<p>SUPPLY        </p>
+<p>Input Voltage Range</p>
+<p>2</p>
+<p>  3.0  5.5 V </p>
+<p>Undervoltage Lockout Threshold  V</p>
+<p>DD</p>
+<p> rising  2.80 2.9 2.95 V </p>
+<p> V</p>
+<p>DD</p>
+<p> falling  2.58 2.7 2.75 V </p>
+<p>Shutdown Current  EN = GND, T</p>
+<p>J</p>
+<p> = −40°C to +85°C    0.1  1  μA </p>
+<p>INTF = 0, EN = V</p>
+<p>DD</p>
+<p>, ILED register = 0,  </p>
+<p>HPLED register = 0, T</p>
+<p>J</p>
+<p> = −40°C to +85°C </p>
+<p> 19 45 μA </p>
+<p>Soft Power-Down Current </p>
+<p>INTF = 1, EN = V</p>
+<p>DD</p>
+<p>, (CTRL1, CTRL0) = (0, 0),  </p>
+<p>T</p>
+<p>J</p>
+<p> = −40°C to +85°C </p>
+<p> 19 45 μA </p>
+<p>INTF = 0, EN = V</p>
+<p>DD</p>
+<p>, ILED register = 001,  </p>
+<p>HPLED register = 0 </p>
+<p> 500 700 μA </p>
+<p>INTF = 1, (CTRL1, CTRL0) = (0, 1), R</p>
+<p>SETI</p>
+<p> = 200 kΩ    500  700  μA </p>
+<p>INTF = 0, EN = V</p>
+<p>DD</p>
+<p>, HPLED register = 00001    1.6  3  mA </p>
+<p>Operating Current</p>
+<p>3</p>
+<p>INTF = 1, (CTRL1, CTRL0) = (1, x)    1.6  3  mA </p>
+<p>LX Leakage  T</p>
+<p>J</p>
+<p> = −40°C to +85°C    0.05  0.5  μA </p>
+<p>HPLED Leakage  T</p>
+<p>J</p>
+<p> = −40°C to +85°C    0.03  0.5  μA </p>
+<p>THERMAL SHUTDOWN        </p>
+<p>Thermal Shutdown Threshold  T</p>
+<p>J</p>
+<p> rising   155  °C </p>
+<p>INPUTS        </p>
+<p>EN, STR, CTRL1/SCL, CTRL0/SDA            </p>
+<p>Input Logic Low Voltage  T</p>
+<p>J</p>
+<p> = −40°C to +85°C      0.54  V </p>
+<p> T</p>
+<p>J</p>
+<p> = −40°C to +125°C      0.48  V </p>
+<p>Input Logic High Voltage  T</p>
+<p>J</p>
+<p> = −40°C to +85°C  1.26      V </p>
+<p> T</p>
+<p>J</p>
+<p> = −40°C to +125°C  1.27      V </p>
+<p>SETI, SETT, SETF            </p>
+<p>Input Logic High Voltage    1.4      V </p>
+<p>INTF        </p>
+<p>Input Logic Low Voltage</p>
+<p>4</p>
+<p>   V</p>
+<p>DD</p>
+<p>/2 − 0.6  V </p>
+<p>Input Logic High Voltage</p>
+<p>4</p>
+<p> V</p>
+<p>DD</p>
+<p>/2 + 0.6      V </p>
+<p>INT OUTPUT </p>
+<p>Logic Low Output Voltage  I</p>
+<p>SINK</p>
+<p> = −3 mA      0.4  V </p>
+<p>Logic High Leakage Current      0.05  0.5  μA </p>
+<p>SETI, SETT, SETF REFERENCE VOLTAGE    1.19  1.22  1.24  V </p>
+<p>INDICATOR LED        </p>
+<p>Current Sink Headroom  V</p>
+<p>HEADROOM</p>
+<p> = V</p>
+<p>DD</p>
+<p> − V</p>
+<p>F </p>
+<p>(ILED) 1   V </p>
+<p>R</p>
+<p>SETI</p>
+<p> = 25 kΩ  14.5  17.5  21.5  mA INTF = 1, SETI Current Source </p>
+<p>R</p>
+<p>SETI</p>
+<p> = 200 kΩ  2.0  2.5  3.0  mA </p>
+<p>ILED register = 1 (001 binary), SETI = V</p>
+<p>DD</p>
+<p>2.0 2.5 3.0 mA INTF = 0 </p>
+<p>ILED register = 7 (111 binary), SETI = V</p>
+<p>DD</p>
+<p>14.5 17.5 21.5 mA </p>
+<p>WHITE LED DRIVER        </p>
+<p>LX        </p>
+<p>Switching Frequency    1.1 1.2 1.3 MHz </p>
+<p>Current Limit    1.8  2.1  2.45  A </p>
+<p>On Resistance      250  420  mΩ </p>
+<p>OUT        </p>
+<p>Soft Start Ramp      18    V/ms </p>
+<p>Overvoltage Threshold  V</p>
+<p>DD</p>
+<p> rising  9.8  10.15  10.5  V </p>
+<p>Bias Current</p>
+<p>5</p>
+<p>V</p>
+<p>OUT</p>
+<p> = 10 V      12  μA </p>
+
+ <p>Rev. B | Page 4 of 24 </p>
+<p>Conditions Min Typ Max Unit Parameter </p>
+<p>HPLED        </p>
+<p>Regulation Voltage</p>
+<p>6</p>
+<p>Boost active, two high power LEDs (HPLEDs)  </p>
+<p>in series </p>
+<p>0.23 0.32 0.42 V </p>
+<p>Regulation Current        </p>
+<p>INTF = 1, Torch Mode  RSETT = 50 kΩ or SETT = V</p>
+<p>DD</p>
+<p>110 125 145 mA </p>
+<p>  RSETT = 125 kΩ  35  50  60  mA </p>
+<p>Flash Mode  RSETF = 50 kΩ  460  500  550  mA <br>  RSETF = 500 kΩ   35  50  60  mA </p>
+<p>INTF = 0, Flash Mode  HPLED register = 11111 (binary), SETF = V</p>
+<p>DD</p>
+<p>460 500 550 mA </p>
+<p>  HPLED register = 11000 (binary), SETF = V</p>
+<p>DD</p>
+<p>365 395 435 mA </p>
+<p>Torch Mode  HPLED register = 00110 (binary), SETF = V</p>
+<p>DD</p>
+<p>110 125 145 mA </p>
+<p>  HPLED register = 00001 (binary), SETF = V</p>
+<p>DD</p>
+<p>38 50 60 mA </p>
+<p>Step Size for HPLED LSB Change  SETF = V</p>
+<p>DD </p>
+<p> 15  mA </p>
+<p>Maximum Flash Timeout  INTF = 0 or 1, 983,040 × oscillator cycles    820    ms </p>
+<p>SETF RESPONSE (TRANSMIT MASKING FUNCTION)</p>
+<p>7</p>
+<p>  HPLED current = 335 mA to 140 mA    22    μs <br>  HPLED current = 140 mA to 335 mA    24    μs  </p>
+<p>1</p>
+<p> All limits at temperature extremes are guaranteed via correlation using standard statistical quality control (SQC). Typical values are at T</p>
+<p>A</p>
+<p> = 25°C, V</p>
+<p>DD</p>
+<p> = 3.6 V. </p>
+<p>2</p>
+<p> This is the V</p>
+<p>DD</p>
+<p> input voltage range over which the rest of the specifications are valid. The part operates as expected until V</p>
+<p>DD</p>
+<p> goes below the UVLO threshold. </p>
+<p>3</p>
+<p> This is the current into the V</p>
+<p>DD</p>
+<p> pin. Additional current can flow into the indicator LED or HPLED, depending on the mode selected. </p>
+<p>4</p>
+<p> INTF should be tied to GND (INTF = 0) for I</p>
+<p>2</p>
+<p>C interface or to V</p>
+<p>DD</p>
+<p> (INTF = 1) for hardwire interface. All other digital inputs are 1.8 V compatible. </p>
+<p>5</p>
+<p> This bias current is active only when the high power LED and/or indicator LED functions are enabled. </p>
+<p>6</p>
+<p> This specification is not valid during minimum on-time operation of the boost converter (one LED case) when excess voltage is dropped across the HPLED pin.  </p>
+<p>7</p>
+<p> This specification is not production tested but is based on bench evaluation. It is based on the typical two-LED application circuit using a 100 kΩ resistor from SETF to GND, </p>
+<p>and a 160 kΩ resistor to a 1.8 V Tx mask logic signal with &lt;1 μs rise/fall time. HPLED register = 11001 (binary). The inductor current has settled to within ±5% of final value. </p>
+
+ <p>Rev. B | Page 5 of 24 </p>
+<h4>I</h4>
+<p>2</p>
+<h4>C TIMING SPECIFICATIONS </h4>
+<p>Table 2.  </p>
+<p>Parameter Min  Max Unit Description </p>
+<p>f</p>
+<p>SCL</p>
+<p>  400 kHz SCL clock frequency </p>
+<p>t</p>
+<p>HIGH</p>
+<p>0.6    μs  SCL high time </p>
+<p>t</p>
+<p>LOW</p>
+<p>1.3    μs   SCL low time </p>
+<p>t</p>
+<p>SU, DAT</p>
+<p>100    ns  Data setup time </p>
+<p>t</p>
+<p>HD, DAT</p>
+<p>0  0.9  μs  Data hold time T</p>
+<p>1</p>
+<p>t</p>
+<p>SU, STA</p>
+<p>0.6    μs  Setup time for repeated start </p>
+<p>t</p>
+<p>HD, STA</p>
+<p>0.6    μs  Hold time for start/repeated start </p>
+<p>t</p>
+<p>BUF</p>
+<p>1.3    μs  Bus free time between a stop and a start condition </p>
+<p>t</p>
+<p>SU, STO</p>
+<p>0.6    μs  Setup time for stop condition </p>
+<p>t</p>
+<p>R</p>
+<p>20 + 0.1 C</p>
+<p>B</p>
+<p>B 300  ns  Rise time of SCL and SDA </p>
+<p>t</p>
+<p>F</p>
+<p>20 + 0.1 C</p>
+<p>B</p>
+<p>B 300  ns  Fall time of SCL and SDA </p>
+<p>t</p>
+<p>SP</p>
+<p>0  50  ns  Pulse width of suppressed spike </p>
+<p>C</p>
+<p>B</p>
+<p>2</p>
+<p>  400  pF  Capacitive load for each bus line </p> <p>1</p>
+<p> A master device must provide a hold time of at least 300 ns for the SDA signal (referred to the V</p>
+<p>IH</p>
+<p> minimum of the SCL signal) to bridge the undefined region of the </p>
+<p>SCL falling edge. </p>
+<p>2</p>
+<p> C</p>
+<p>B</p>
+<p> is the total capacitance of one bus line in picofarads. </p>  <p>SDA<br>SCL</p>
+<p>S</p>
+<p>S = START CONDITION</p>
+<p>Sr = REPEATED START CONDITION</p>
+<p>P = STOP CONDITION</p>
+<p>Sr P S</p>
+<p>t</p>
+<p>LOW</p>
+<p>t</p>
+<p>R</p>
+<p>t</p>
+<p>HD, DAT</p>
+<p>t</p>
+<p>HIGH</p>
+<p>t</p>
+<p>SU, DAT</p>
+<p>t</p>
+<p>F</p>
+<p>t</p>
+<p>F</p>
+<p>t</p>
+<p>SU, STA</p>
+<p>t</p>
+<p>HD, STA</p>
+<p>t</p>
+<p>SP</p>
+<p>t</p>
+<p>SU, STO</p>
+<p>t</p>
+<p>BUF</p>
+<p>t</p>
+<p>R</p>
+<p>06180-002</p> <p>Figure 3. I</p>
+<p>2</p>
+<p>C Interface Timing Diagram </p> 
+ <p>Rev. B | Page 6 of 24 </p>
+<h2>ABSOLUTE MAXIMUM RATINGS </h2>
+<p>Table 3.  </p>
+<p>Parameter Rating </p>
+<p>V</p>
+<p>DD</p>
+<p>, CTRL0/SDA, CTRL1/SCL, INTF, EN, </p>
+<p>SETI, SETT, SETF, STR, HPLED to GND </p>
+<p>−0.3 V to +6 V </p>
+<p>INT, ILED to GND </p>
+<p>−0.3 V to + (V</p>
+<p>DD</p>
+<p> + 0.3 V) </p>
+<p>LX, OUT to GND  −0.3 V to +12 V </p>
+<p>PGND to GND  −0.3 V to +0.3 V </p>
+<p>Operating Ambient Temperature Range  −40°C to +125°C</p>
+<p>1</p>
+<p>Operating Junction Temperature  125°C </p>
+<p>Storage Temperature Range  −65°C to +150°C </p>
+<p>Soldering Conditions  JEDEC J-STD-020 </p>
+<p>1</p>
+<p> In applications where high power dissipation and poor thermal resistance </p>
+<p>are present, the maximum ambient temperature may have to be derated. </p>
+<p>Maximum ambient temperature (T</p>
+<p>A(MAX)</p>
+<p>) is dependent on the maximum </p>
+<p>operating junction temperature (T</p>
+<p>J(MAXOP)</p>
+<p> = 125°C), the maximum power </p>
+<p>dissipation of the device (P</p>
+<p>D(MAX)</p>
+<p>), and the junction-to-ambient thermal </p>
+<p>resistance of the part/package in the application (θ</p>
+<p>JA</p>
+<p>), using the following </p>
+<p>equation: T</p>
+<p>A(MAX)</p>
+<p> = T</p>
+<p>J(MAXOP)</p>
+<p> − (θ</p>
+<p>JA</p>
+<p> × P</p>
+<p>D(MAX)</p>
+<p>). </p> <p>Stresses above those listed under Absolute Maximum Ratings </p>
+<p>may cause permanent damage to the device. This is a stress </p>
+<p>rating only; functional operation of the device at these or any </p>
+<p>other conditions above those indicated in the operational </p>
+<p>section of this specification is not implied. Exposure to absolute </p>
+<p>maximum rating conditions for extended periods may affect </p>
+<p>device reliability. </p>
+<p>Absolute maximum ratings apply individually only, not in </p>
+<p>combination. Unless otherwise specified, all other voltages  </p>
+<p>are referenced to GND. </p>
+<h4>THERMAL RESISTANCE </h4>
+<p>Junction-to-ambient thermal resistance (θ</p>
+<p>JA</p>
+<p>) of the package is </p>
+<p>based on modeling and calculation using a 4-layer board. The </p>
+<p>junction-to-ambient thermal resistance is dependent on the </p>
+<p>application and board layout. In applications where high maximum </p>
+<p>power dissipation exists, attention to thermal board design is </p>
+<p>required. The value of θ</p>
+<p>JA</p>
+<p> may vary, depending on PCB material, </p>
+<p>layout, and environmental conditions. For more information, </p>
+<p>see the AN-772 Application Note, A Design and Manufacturing </p>
+<p>Guide for the Lead Frame Chip Scale Package (LFCSP). </p>
+<p>Table 4. Thermal Resistance </p>
+<p>Parameter Value Unit </p>
+<p>θ</p>
+<p>JA</p>
+<p>44 °C/W </p>
+<p>Maximum Power Dissipation  1  W </p> <h4>BOUNDARY CONDITION </h4>
+<p>Natural convection, 4-layer board, exposed pad soldered to  </p>
+<p>the PCB. </p> <h4>ESD CAUTION </h4>    
+ <p>Rev. B | Page 7 of 24 </p>
+<h2>PIN CONFIGURATION AND FUNCTION DESCRIPTIONS 
+</h2>
+<p>PIN 1</p>
+<p>INDICATOR</p>
+<p>1SETT<br>2SETF
+<br>3CTRL1/SCL
+<br>4CTRL0/SDA
+</p>
+<p>11 INT</p>
+<p>12 PGND</p>
+<p>10 INTF</p>
+<p>9 HPLED</p>
+<p>5<br>SETI</p>
+<p>6<br>ILED</p>
+<p>7<br>OUT</p>
+<p>8<br>GND</p>
+<p>15<br>EN</p>
+<p>16<br>STR</p>
+<p>14<br>V</p>
+<p>DD</p>
+<p>13<br>LX</p>
+<p>ADP1653</p>
+<p>TOP VIEW</p>
+<p>(Not to Scale)</p>
+<p>06180-003</p> <p>Figure 4. Pin Configuration </p>
+<p>Table 5. Pin Function Descriptions </p>
+<p>Pin No.  Mnemonic  Description </p>
+<p>1 SETT </p>
+<p>Set Torch Input (2-Bit Logic Interface Only). SETT programs the high power LED current in torch mode. An </p>
+<p>external resistor connected between SETT and ground sets the torch current. When SETT is tied high, the current </p>
+<p>is internally set to 125 mA. In I</p>
+<p>2</p>
+<p>C mode, this pin is regarded as a no connect. </p>
+<p>2 SETF </p>
+<p>Set Flash Input. SETF programs the high power LED (HPLED) current in flash mode and allows for transmit </p>
+<p>blanking of the LED. In 2-bit logic interface mode, an external resistor connected between SETF and ground sets </p>
+<p>the flash current. If SETF is tied high, the current is set internally to 500 mA. In I</p>
+<p>2</p>
+<p>C mode, the flash current scales </p>
+<p>with both the external resistor and the internal HPLED bits in the output select register. If SETF is tied high, an </p>
+<p>internal 50 kΩ resistor combined with the HPLED bits set the HPLED current. </p>
+<p>3 CTRL1/SCL </p>
+<p>Serial Interface Clock Input. In 2-bit logic interface mode, CTRL1 is the second input bit of the digital interface.  </p>
+<p>In I</p>
+<p>2</p>
+<p>C mode, SCL is the clock input of the I</p>
+<p>2</p>
+<p>C-compatible serial interface.  </p>
+<p>4 CTRL0/SDA </p>
+<p>Serial Interface Data Input. In 2-bit logic interface mode, CTRL0 is the first input bit of the digital interface.  </p>
+<p>In I</p>
+<p>2</p>
+<p>C mode, SDA is the data input/output of the I</p>
+<p>2</p>
+<p>C-compatible serial interface. </p>
+<p>5 SETI </p>
+<p>Set Indicator Input (2-Bit Logic Interface Only). SETI programs the indicator LED current. An external resistor connected </p>
+<p>between SETI and ground sets the indicator LED (ILED) current. If SETI is tied high, the current is internally set to  </p>
+<p>10 mA. In I</p>
+<p>2</p>
+<p>C mode, this pin is regarded as a no connect. </p>
+<p>6 ILED </p>
+<p>Indicator LED Input. Connect the cathode of the indicator LED to the ILED pin. Connect the anode to the battery </p>
+<p>or to a voltage rail greater than the LED forward voltage. </p>
+<p>7 OUT </p>
+<p>White LED Output Voltage. OUT senses the output voltage of the white LED step-up converter. At startup, the <br>ADP1653 limits the rate of increase of the voltage at OUT (soft start) to prevent excessive input inrush current.  
+</p>
+<p>The OUT pin features a comparator to detect an overvoltage condition if the LED string is open circuited. Connect </p>
+<p>the anode of the white LED(s) to OUT. Connect a 3.3 μF or greater capacitor between OUT and PGND. </p>
+<p>8  GND  Analog/Digital Ground. Connect GND to PGND at the LFCSP paddle. </p>
+<p>9 HPLED </p>
+<p>High Power LED Current Regulator. HPLED regulates the current of the high power LED(s). Connect the cathode of </p>
+<p>the white LED string to HPLED. </p>
+<p>10 INTF </p>
+<p>Interface Input. INTF selects the 2-pin interface mode. INTF is driven high to enable CTRL1 and CTRL0 for 2-bit </p>
+<p>logic interface mode. INTF is driven low to enable SDA and SCL for I</p>
+<p>2</p>
+<p>C interfacing. </p>
+<p>11 </p>
+<p>INT Active Low Interrupt Output. INT is an open-drain output that transitions from high to low to signal that a fault </p>
+<p>condition has occurred. </p>
+<p>INT should be connected via a pull-up resistor (for example, 10 kΩ to 100 kΩ) to the I/O </p>
+<p>supply rail and directly to the system processor. When an interrupt is detected, the system processor can read the </p>
+<p>FAULT register, using the I</p>
+<p>2</p>
+<p>C interface for details on the fault condition. </p>
+<p>12  PGND  Power Ground for Internal Switching FET. </p>
+<p>13 LX </p>
+<p>White LED Switch Node. LX drives the inductor of the white LED step-up converter. An inductor and diode </p>
+<p>connected to LX powers the white LEDs. </p>
+<p>14 V</p>
+<p>DD</p>
+<p>Supply Input. Connect the battery between V</p>
+<p>DD</p>
+<p> and PGND. Bypass V</p>
+<p>DD</p>
+<p> to PGND with a 4.7 μF or greater capacitor.  </p>
+<p>15 EN </p>
+<p>Enable Input. CMOS input. Driving EN high turns on the ADP1653. Driving EN low disables the ADP1653 and </p>
+<p>reduces the input current to less than 1 μA. When EN is high, disabling the LEDs puts the part into sleep mode, </p>
+<p>dropping the input current to less than 45 μA. </p>
+<p>16 STR </p>
+<p>Strobe Control Input (I</p>
+<p>2</p>
+<p>C Interface Only). CMOS input. Driving STR high enables the flash function of the white </p>
+<p>LED. STR also enables the watchdog timer to prevent overstressing the white LEDs.  </p>
+
+ <p>Rev. B | Page 8 of 24 </p>
+<p>Table 6. Mode Selection </p>
+<p>Pin Mnemonic  Value  INTF = 0 (I</p>
+<p>2</p>
+<p>C Interface)  INTF = 1 (2-Bit Logic Interface) </p>
+<p>CTRL0/SDA    SDA  CTRL1, CTRL0 = 0, 0 (ADP1653 disabled) </p>
+<p>CTRL1/SCL    SCL  CTRL1, CTRL0 = 0, 1 (ADP1653 indicator LED) </p>
+<p>      CTRL1, CTRL0 = 1, 0 (ADP1653 torch mode) </p>
+<p>      CTRL1, CTRL0 = 1, 1 (ADP1653 flash mode) </p>
+<p>Low  ADP1653 disabled  ADP1653 disabled EN </p>
+<p>High  ADP1653 enabled  ADP1653 enabled </p>
+<p>Low Flash disabled  Ignored STR </p>
+<p>High Flash enabled  Ignored </p>
+<p>Low  Fault condition  Fault condition </p>
+<p>INT</p>
+<p>High  Normal operation  Normal operation </p>
+<p>Resistor Ignored</p>
+<p>1</p>
+<p>SETI resistor sets indicator LED current</p>
+<p>2</p>
+<p>SETI </p>
+<p>High I</p>
+<p>2</p>
+<p>C sets ILED current  ILED current = 10 mA </p>
+<p>Resistor Ignored</p>
+<p>1</p>
+<p>SETT resistor sets torch current</p>
+<p>2</p>
+<p>SETT </p>
+<p>High I</p>
+<p>2</p>
+<p>C sets torch current  Torch current = 125 mA </p>
+<p>Resistor  SETF resistor(s) and I</p>
+<p>2</p>
+<p>C set flash current and torch current</p>
+<p>3</p>
+<p>SETF resistor(s) set flash current</p>
+<p>2</p>
+<p>SETF </p>
+<p>High I</p>
+<p>2</p>
+<p>C sets flash current  Flash current = 500 mA </p> <p>1</p>
+<p> If a resistor is present on SETI or SETT in I</p>
+<p>2</p>
+<p>C mode, it is ignored. Both pins should be tied high when operating in I</p>
+<p>2</p>
+<p>C mode. </p>
+<p>2</p>
+<p> If a resistor is present, the current is set by this resistor. If a resistor is not present, the pin must be tied high and a default internal current set. </p>
+<p>3</p>
+<p> If a resistor is present on SETF in I</p>
+<p>2</p>
+<p>C mode, the output current scales with both the I</p>
+<p>2</p>
+<p>C setting and the external reference current. The SETF resistor scales both the flash </p>
+<p>mode and torch mode currents.  </p> 
+ <p>Rev. B | Page 9 of 24 </p>
+<h2>TYPICAL PERFORMANCE CHARACTERISTICS </h2>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (V</p>
+<p>OUT</p>
+<p>) 5V/DIV</p>
+<p>CHANNEL 4 (STR) 5V/DIV</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-011</p>
+<p>40µs/DIV</p>
+<p>Δ: 138µs</p>
+<p>L = D2812C-2R0</p> <p>Figure 5. Startup, Two LEDs Flash Mode,  </p>
+<p>LED Current = 335 mA, V</p>
+<p>DD</p>
+<p> = 3.2 V </p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (V</p>
+<p>OUT</p>
+<p>) 5V/DIV</p>
+<p>CHANNEL 4 (STR) 5V/DIV</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-012</p>
+<p>40µs/DIV</p>
+<p>Δ: 175µs</p>
+<p>L = D2812C-2R0</p> <p>Figure 6. Startup, Two LEDs Flash Mode,  </p>
+<p>LED Current = 335 mA, V</p>
+<p>DD</p>
+<p> = 3.6 V </p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (V</p>
+<p>OUT</p>
+<p>) 5V/DIV</p>
+<p>CHANNEL 4 (SCL) 5V/DIV</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-013</p>
+<p>40µs/DIV</p>
+<p>Δ: 153µs</p>
+<p>L = D2812C-2R0</p> <p>Figure 7. Startup, Two LEDs Torch Mode,  </p>
+<p>LED Current = 130 mA, V</p>
+<p>DD</p>
+<p> = 3.2 V </p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (V</p>
+<p>OUT</p>
+<p>) 5V/DIV</p>
+<p>CHANNEL 4 (SCL) 5V/DIV</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-014</p>
+<p>40µs/DIV</p>
+<p>Δ</p>
+<p>: 132µs</p>
+<p>L = D2812C-2R0</p> <p>Figure 8. Startup, Two LEDs Torch Mode,  </p>
+<p>LED Current = 130 mA, V</p>
+<p>DD</p>
+<p> = 3.6 V </p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (LX) 5V/DIV</p>
+<p>CHANNEL 4 (HPLED NODE)</p>
+<p>1V/DIV</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-015</p>
+<p>400ns/DIV</p>
+<p>L = D2812C-2R0</p> <p>Figure 9. Inductor Current, Two LEDs Flash Mode,  </p>
+<p>LED Current = 335 mA, V</p>
+<p>DD</p>
+<p> = 3.6 V </p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (LX) 5V/DIV</p>
+<p>CHANNEL 4 (HPLED NODE)</p>
+<p>1V/DIV</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-016</p>
+<p>400ns/DIV</p>
+<p>L = D2812C-2R0</p> <p>Figure 10. Inductor Current, Two LEDs Torch Mode,  </p>
+<p>LED Current = 130 mA, V</p>
+<p>DD</p>
+<p> = 3.6 V </p>
+
+ <p>Rev. B | Page 10 of 24 </p>
+<p>500<br>450<br>400<br>350<br>300<br>250<br>200<br>150<br>100</p>
+<p>50</p>
+<p>0</p>
+<p>0 5 10 15 20 25 30</p>
+<p>HPLED CODE</p>
+<p>I</p>
+<p>HPLED</p>
+<p> (mA)</p>
+<p>06180-037</p> <p>Figure 11. HPLED Current vs. HPLED Code, I</p>
+<p>2</p>
+<p>C Mode, SETF = V</p>
+<p>DD</p>
+<p>86<br>70</p>
+<p>100 400</p>
+<p>LED CURRENT (mA)</p>
+<p>EFFICIENCY (%)</p>
+<p>84<br>82<br>80<br>78<br>76<br>74<br>72</p>
+<p>150 200 250 300 350</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3.2V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3.6V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 4.2V</p>
+<p>06180-018</p>
+<p>L = D2812C-2R0</p>
+<p>DS = BAT20J</p>
+<p>D1, D2 = PWF-3</p> <p>Figure 12. Efficiency P</p>
+<p>LED</p>
+<p>/P</p>
+<p>IN</p>
+<p>, Two High Power White LEDs in Series </p>
+<p>85<br>80<br>75<br>70<br>65<br>60</p>
+<p>05</p>
+<p>00</p>
+<p>HPLED CURRENT (mA)</p>
+<p>EFFICIENCY (%)</p>
+<p>100 200 300 400</p>
+<p>V</p>
+<p>DD</p>
+<p> = 4.2V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3.6V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3.2V</p>
+<p>06180-020</p>
+<p>L = LQM31P-2R2</p>
+<p>DS = BAT20J</p>
+<p>D1 = PWF-3</p> <p>Figure 13. Efficiency P</p>
+<p>LED</p>
+<p>/P</p>
+<p>IN</p>
+<p>, One High Power White LED </p>
+<p>Δ: 22.4µs</p>
+<p>2<br>3<br>4</p>
+<p>1</p>
+<p>CHANNEL 3 (V</p>
+<p>OUT</p>
+<p>) 5V/DIV</p>
+<p>CHANNEL 4 (Tx MASK)</p>
+<p>5V/DIV</p>
+<p>CHANNEL 1 (IBAT) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-021</p>
+<p>40µs/DIV</p> <p>Figure 14. Tx Masking Response, Tx Mask 0 V to 1.8 V,  </p>
+<p>IHPLED = 335 mA to 140 mA, V</p>
+<p>DD</p>
+<p> = 3.2 V  </p>
+<p>Δ: 23.2µs</p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 3 (V</p>
+<p>OUT</p>
+<p>) 5V/DIV</p>
+<p>CHANNEL 4 (Tx MASK)</p>
+<p>5V/DIV</p>
+<p>CHANNEL 1 (IBAT) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>06180-022</p>
+<p>40µs/DIV</p> <p>Figure 15. Tx Masking Response, Tx Mask 0 V to 1.8 V,  </p>
+<p>I</p>
+<p>HPLED</p>
+<p> = 140 mA to 335 mA, V</p>
+<p>DD</p>
+<p> = 3.2 V </p>
+<p>2<br>3<br>4</p>
+<p>1</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>CHANNEL 3 (INT) 5V/DIV</p>
+<p>CHANNEL 4 (STR) 5V/DIV</p>
+<p>100ms/DIV</p>
+<p>06180-023</p> <p>Figure 16. Flash Timed Mode, Two LEDs, Timer = 820 ms,  </p>
+<p>I</p>
+<p>HPLED</p>
+<p> = 380 mA, V</p>
+<p>DD</p>
+<p> = 3.6 V </p>
+
+ <p>Rev. B | Page 11 of 24 </p>
+<p>2<br>3<br>4<br>1</p>
+<p>CHANNEL 1 (I</p>
+<p>L</p>
+<p>) 0.5A/DIV</p>
+<p>CHANNEL 2 (I</p>
+<p>HPLED</p>
+<p>) 0.2A/DIV</p>
+<p>CHANNEL 3 (INT) 5V/DIV</p>
+<p>CHANNEL 4 (STR) 5V/DIV</p>
+<p>06180-024</p>
+<p>100ms/DIV</p> <p>Figure 17. Flash Untimed Mode, Two LEDs, Timer = 300 ms, </p>
+<p>I</p>
+<p>HPLED</p>
+<p> = 380 mA, V</p>
+<p>DD</p>
+<p> = 3.6 V </p>
+<p>1.5<br>1.7<br>1.9<br>2.1<br>2.3<br>2.5</p>
+<p>–40 10 60 110</p>
+<p>LOW</p>
+<p>MEDIUM<br>HIGH</p>
+<p>06180-040</p>
+<p>TEMPERATURE (°C)</p>
+<p>LX CURRENT LIMIT (A)</p> <p>Figure 18. Typical Current Limit vs. Temperature;  </p>
+<p>Low, Medium, and High Current Limit Parts </p>
+<p>0.20</p>
+<p>0</p>
+<p>–40 125</p>
+<p>TEMPERATURE (°C)</p>
+<p>SHUTDOWN CURRENT (µA)</p>
+<p>0.18<br>0.16<br>0.14<br>0.12<br>0.10<br>0.08<br>0.06<br>0.04<br>0.02</p>
+<p>10 60 110</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3.6V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 5.5V</p>
+<p>06180-026</p> <p>Figure 19. Shutdown Current vs. Temperature, EN = 0 V </p>
+<p>35</p>
+<p>0</p>
+<p>–50 125</p>
+<p>TEMPERATURE (°C)</p>
+<p>I</p>
+<p>Q</p>
+<p> (µA)</p>
+<p>050100</p>
+<p>06180-027</p>
+<p>30<br>25<br>20<br>15<br>10</p>
+<p>5</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 3.6V</p>
+<p>V</p>
+<p>DD</p>
+<p> = 5.5V</p> <p>Figure 20. Quiescent Current vs. Temperature, </p>
+<p>EN = V</p>
+<p>DD</p>
+<p>, LED Functions Disabled </p>
+<p>1.6</p>
+<p>0</p>
+<p>06</p>
+<p>V</p>
+<p>DD</p>
+<p> (V)</p>
+<p>I</p>
+<p>Q</p>
+<p> (mA)</p>
+<p>1.4<br>1.2<br>1.0<br>0.8<br>0.6<br>0.4<br>0.2</p>
+<p>12345</p>
+<p>ILED ENABLED</p>
+<p>I</p>
+<p>Q</p>
+<p> = 21.5μA</p>
+<p>06180-028</p> <p>Figure 21. Quiescent Current vs. V</p>
+<p>DD</p>
+<p>, V</p>
+<p>DD</p>
+<p> Swept from 5.5 V to 0 V, </p>
+<p>ILED Active at 2.5 mA Until UVLO Threshold  </p>
+<p>1.220<br>1.215<br>1.210<br>1.205<br>1.200<br>1.195<br>1.190<br>1.185<br>1.180<br>1.175<br>1.170</p>
+<p>–40 –15 10 35 60 85 110</p>
+<p>TEMPERATURE (°C)</p>
+<p>FREQUENCY (MHz)</p>
+<p>3V</p>
+<p>3.6V</p>
+<p>5.5V</p>
+<p>06180-029</p> <p>Figure 22. Oscillator Frequency vs. Temperature vs. V</p>
+<p>DD</p>
+
+ <p>Rev. B | Page 12 of 24 </p>
+<p>127.5<br>122.5</p>
+<p>–40</p>
+<p>TEMPERATURE (°C)</p>
+<p>I</p>
+<p>HPLED</p>
+<p> (mA)</p>
+<p>10 60 110</p>
+<p>127.0<br>126.5<br>126.0<br>125.5<br>125.0<br>124.5<br>124.0<br>123.5<br>123.0</p>
+<p>5.5V</p>
+<p>3.6V</p>
+<p>3V</p>
+<p>06180-031</p> <p>Figure 23. HPLED Regulation, Set at 125 mA,  </p>
+<p>HPLED Register = 00110 (Binary), SETF = V</p>
+<p>DD</p>
+<p>353<br>347</p>
+<p>–40</p>
+<p>TEMPERATURE (°C)</p>
+<p>I</p>
+<p>HPLED</p>
+<p> (mA)</p>
+<p>10 60 110</p>
+<p>352<br>351<br>350<br>349<br>348</p>
+<p>3.6V</p>
+<p>5.5V</p>
+<p>3V</p>
+<p>06180-032</p> <p>Figure 24. HPLED Regulation, Set at 350 mA,  </p>
+<p>HPLED Register = 10101 (Binary), SETF = V</p>
+<p>DD</p> 
+ <p>Rev. B | Page 13 of 24 </p>
+<h2>THEORY OF OPERATION </h2>
+<p>The ADP1653 is a high power, white LED driver ideal for <br>driving white LEDs for use as a camera flash. The ADP1653 </p>
+<p>includes a step-up converter and a current regulator suitable for </p>
+<p>powering one, or up to three, high power, white LEDs. A second </p>
+<p>lower current sink allows an indicator LED to be driven with </p>
+<p>2.5 mA to 17.5 mA current.  </p>
+<p>The ADP1653 responds to a 2-pin control interface that can </p>
+<p>operate in two separate pin-selectable modes. Tying the INTF </p>
+<p>pin high enables a 2-bit logic hardwire interface. Tying the </p>
+<p>INTF pin low enables the I</p>
+<p>2</p>
+<p>C interface.  </p>
+<h4>WHITE LED DRIVER </h4>
+<p>The ADP1653 drives a step-up converter to power typically one </p>
+<p>or two series-connected, high power LEDs. The white LED driver </p>
+<p>regulates the high power LED current for accurate brightness </p>
+<p>control. The ADP1653 uses an integrated NFET current regulator </p>
+<p>that drops the voltage when the power LED forward voltage is </p>
+<p>less than the battery voltage.  </p>
+<p>When the required LED voltage is greater than the battery voltage, </p>
+<p>the NFET current regulator voltage at the HPLED pin is approxi-</p>
+<p>mately 320 mV, and the step-up converter applies the appropriate </p>
+<p>voltage to OUT, allowing the LED to conduct the regulated current. </p>
+<p>When the white LED is turned on, the step-up converter output </p>
+<p>voltage slew is limited to 18 V/ms to prevent excessive battery </p>
+<p>current while charging the output capacitor. The output voltage </p>
+<p>of the step-up converter is sensed at OUT. If the output voltage </p>
+<p>exceeds the 10.15 V (typical) limit, the white LED converter </p>
+<p>turns off to indicate that a fault condition has occurred through </p>
+<p>the </p>
+<p>INT</p>
+<p> output and system registers. This feature prevents damage </p>
+<p>due to an overvoltage if the white LED string fails with an open-</p>
+<p>circuit condition. </p>
+<p>Setting the LED regulation currents depends on the 2-pin </p>
+<p>control interface used, as described in the following sections.</p>
+<p>16<br>15</p>
+<p>4<br>3</p>
+<p>ILED</p>
+<p>CONTROL</p>
+<p>6 7 14</p>
+<p>INTERFACE/</p>
+<p>CONTROL</p>
+<p>11<br>10</p>
+<p>PWM</p>
+<p>CONTROLLER</p>
+<p>OSCILLATOR</p>
+<p>FAULT</p>
+<p>REGISTER</p>
+<p>THERMAL</p>
+<p>PROTECTION</p>
+<p>1 25</p>
+<p>× 5200</p>
+<p>= TORCH</p>
+<p>× 20800</p>
+<p>= FLASH</p>
+<p>× 400</p>
+<p>= ILED</p>
+<p>12</p>
+<p>Tx MASK (OPTIONAL)</p>
+<p>WATCHDOG</p>
+<p>TIMER</p>
+<p>PGND</p>
+<p>HPLED</p>
+<p>GND</p>
+<p>1.22V/RF1.22V/RT1.22V/RI RFRTRI</p>
+<p>SETF</p>
+<p>1.22V</p>
+<p>I</p>
+<p>REF</p>
+<p>(FLASH)</p>
+<p>I</p>
+<p>REF</p>
+<p>(TORCH)</p>
+<p>I</p>
+<p>REF</p>
+<p>(ILED)</p>
+<p>1.22V</p>
+<p>1.22V1.22V</p>
+<p>1.22V1.22V</p>
+<p>SETTSETI</p>
+<p>INTF</p>
+<p>INT</p>
+<p>V</p>
+<p>DD</p>
+<p>/2</p>
+<p>I/O V</p>
+<p>DD</p>
+<p>STR</p>
+<p>EN</p>
+<p>CTRL0/SDA<br>CTRL1/SCL</p>
+<p>10.15V</p>
+<p>2.7V</p>
+<p>OVP UVLO</p>
+<p>ILED OUT</p>
+<p>V</p>
+<p>DD</p>
+<p>13</p>
+<p>7</p>
+<p>9</p>
+<p>–<br>+</p>
+<p>0.32V</p>
+<p>OUT</p>
+<p>COUT</p>
+<p>D1</p>
+<p>PGND</p>
+<p>CIN</p>
+<p>PGND</p>
+<p>L1</p>
+<p>LX</p>
+<p>HIGH POWER</p>
+<p>LED CONTROL</p>
+<p>8</p>
+<table><tr>
+<td>V</td>
+<td>V</td>
+</tr></table>
+<p>DD</p>
+<p>= 2.75</p>
+<p>TO 5.5V</p>
+<p>BIAS</p>
+<p>0</p>
+<p>6180-004</p> <p>Figure 25. Detailed Block Diagram </p>
+
+ <p>Rev. B | Page 14 of 24 </p>
+<h4>2-BIT LOGIC INTERFACE MODE (INTF = 1) </h4>
+<p>In 2-bit logic interface mode, the two control pins, CTRL1 and </p>
+<p>CTRL0, select whether the part is disabled or operating in indicator </p>
+<p>LED mode, torch mode, or flash mode, as outlined in </p>
+<p>Table 7.  </p>
+<p>Table 7. 2-Bit Logic Interface Mode Selection </p>
+<p>INTF = 1  CTRL1  CTRL0 </p>
+<p>LED Current </p>
+<p>Setting Pin </p>
+<p>Default Current </p>
+<p>(SETx = H) </p>
+<p>Disabled 0  0  —  — </p>
+<p>ILED  0  1  SETI  ILED = 10 mA </p>
+<p>Torch  1  0  SETT  HPLED = 125 mA </p>
+<p>Flash  1  1  SETF  HPLED = 500 mA </p>
+<p>The LED current levels for indicator LED mode, torch mode, </p>
+<p>and flash mode operation are set with separate external resistors </p>
+<p>tied between ground and the SETI, SETT, and SETF pins, </p>
+<p>respectively. The resulting reference current into each SETx pin </p>
+<p>is equal to 1.22 V/R</p>
+<p>SETx</p>
+<p>. The reference current multiplied by a </p>
+<p>fixed ratio sets the relevant LED current.  </p>
+<p>Table 8. Reference Current to LED Current Scaling </p>
+<p>INTF = 1  CTRL1  CTRL0  LED Current </p>
+<p>Disabled 0  0  — </p>
+<p>ILED 0  1  I</p>
+<p>REF</p>
+<p>(SETI) × 400 </p>
+<p>Torch 1  0  I</p>
+<p>REF</p>
+<p>(SETT) × 5200 </p>
+<p>Flash 1  1  I</p>
+<p>REF</p>
+<p>(SETF) × 20,800 </p>
+<p>Alternatively, a default internal current setting is used by tying </p>
+<p>the SETx pin high. The default current for each mode of operation </p>
+<p>approximately equals the current obtained with a 50 kΩ resistor </p>
+<p>tied from the SETx pin to ground.  </p>
+<p>Consequently, the LED current resulting from an external </p>
+<p>resistor R</p>
+<p>SETx</p>
+<p> is given by the following equation: </p>
+<p>SETx</p>
+<p>DEFAULT</p>
+<p>LED</p>
+<p>R</p>
+<p>II</p>
+<p>k50</p>
+<p>×=</p>
+<p> (1) </p>
+<p>where I</p>
+<p>DEFAULT</p>
+<p> is the LED current resulting from tying the SETx </p>
+<p>pin high.  </p>
+<p>The values of I</p>
+<p>DEFAULT</p>
+<p> are given in Table 7 for indicator LED mode </p>
+<p>(SETI), torch mode (SETT), and flash mode (SETF) operation. </p>
+<p>For accurate LED current settings, the minimum SETx resistor </p>
+<p>values should be 25 kΩ (SETI, SETT) or 50 kΩ (SETF). </p>
+<p>The flash current can be quickly reduced with an external  </p>
+<p>logic signal (typically 1.8 V logic) by adding a second external </p>
+<p>resistor from the SETF pin to the logic signal. Bringing this </p>
+<p>digital input from low to high toggles the flash from normal  </p>
+<p>to reduced current mode by reducing the reference current </p>
+<p>supplied to the ADP1653 via the SETF pin (see the </p>
+<p>Applications </p>
+<p>Information</p>
+<p> section). </p>
+<h4>I</h4>
+<p>2</p>
+<h4>C INTERFACE MODE (INTF = 0) </h4>
+<p>The ADP1653 includes an I</p>
+<p>2</p>
+<p>C-compatible serial interface for </p>
+<p>control of LED current, as well as for readback of system status </p>
+<p>registers. The I</p>
+<p>2</p>
+<p>C chip address is 0x60 (0110 0000 (binary) in </p>
+<p>write mode). The default value of all four registers is 0x00. </p>
+<p>Registers values are reset to the default values when enable is </p>
+<p>brought low, or the VDD supply falls below the undervoltage </p>
+<p>(UVLO) level. </p>
+<p>Figure 26 illustrates the I</p>
+<p>2</p>
+<p>C write sequence. The subaddress </p>
+<p>content selects which of the four ADP1653 registers is written </p>
+<p>to. </p>
+<p>Figure 27 shows the I</p>
+<p>2</p>
+<p>C read sequence. The ADP1653 sends </p>
+<p>the data from the register denoted by the subaddress. In this </p>
+<p>case, the fault register is read (REG3). </p>
+<p>The register definitions are shown in </p>
+<p>Figure 28. The lowest bit </p>
+<p>number (0) represents the least significant bit, and the highest </p>
+<p>bit number (7) represents the most significant bit. </p> <p>SUBADDRESSCHIP ADDRESS</p>
+<p>ST0110000 0 0 0SP</p>
+<p>0=</p>
+<p>W</p>
+<p>RITE</p>
+<p>ADP1653 ACK</p>
+<p>ADP1653 ACK</p>
+<p>ADP1653 RECEIVES DATA</p>
+<p>ADP1653 ACK</p>
+<p>06180-038</p>
+<p>0</p> <p>Figure 26. I</p>
+<p>2</p>
+<p>C Write Sequence  </p> <p>SUBADDRESSCHIP ADDRESS CHIP ADDRESS</p>
+<p>ST0110000 0000000110ST0110000 0 1SP</p>
+<p>1=RE</p>
+<p>A</p>
+<p>D</p>
+<p>ADP1653 NO ACK</p>
+<p>ADP1653 SENDS DATA</p>
+<p>ADP1653 ACK</p>
+<p>ADP1653 ACK</p>
+<p>ADP1653 ACK</p>
+<p>06180-039</p>
+<p>0=WRITE</p>
+<p>0 1</p> <p>Figure 27. I</p>
+<p>2</p>
+<p>C Read Sequence </p>
+
+ <p>Rev. B | Page 15 of 24 </p>
+<p>UNUSED</p>
+<p>UNUSED</p>
+<p>UNUSED</p>
+<p>OUT_SEL</p>
+<p>OUTPUT SELECT</p>
+<p>CONFIG</p>
+<p>TIMER</p>
+<p>CONFIGURATION</p>
+<p>SW_STROBE</p>
+<p>SOFTWARE STROBE</p>
+<p>FAULT</p>
+<p>FAULT</p>
+<p>CONDITIONS</p>
+<p>REG0<br>REG1<br>REG2<br>REG3</p>
+<p>HPLED&lt;4:0&gt;</p>
+<p>HIGH POWER</p>
+<p>LED CURRENT</p>
+<p>ILED&lt;2:0&gt;</p>
+<p>INDICATOR LED</p>
+<p>CURRENT</p>
+<p>TMR_SET&lt;3:0&gt;</p>
+<p>TIMER PERIOD</p>
+<p>SETTING</p>
+<p>TMR_CFG</p>
+<p>TIMER</p>
+<p>CONFIGURATION</p>
+<p>SW_STROBE</p>
+<p>SOFTWARE STROBE</p>
+<p>ENABLE</p>
+<p>FLT_OT</p>
+<p>OVERTEMPERATURE</p>
+<p> FAULT</p>
+<p>FLT_OV</p>
+<p>OVERVOLTAGE</p>
+<p>FAULT</p>
+<p>FLT_TMR</p>
+<p>TIMEOUT FAULT</p>
+<p>D7 D6 D5 D4 D3 D2 D1 D0<br>D7 D6 D5 D4 D3 D2 D1 D0<br>D7 D6 D5 D4 D3 D2 D1 D0<br>D7 D6 D5 D4 D3 D2 D1 D0</p>
+<p>06180-005</p>
+<p>FLT_SCP</p>
+<p>SHORT-CIRCUIT</p>
+<p>FAULT</p> <p>Figure 28. I</p>
+<p>2</p>
+<p>C Register Assignments </p> <p>The LED regulation current levels are controlled by writing to </p>
+<p>the ILED and HPLED registers. If the ILED register is set to 0, </p>
+<p>the ILED regulator is turned off and no current flows through </p>
+<p>the indicator LED. If the ILED register is programmed from  </p>
+<p>1 (001 binary) to 7 (111 binary), the indicator LED is continuously </p>
+<p>on, with a current scaled to the register setting given by </p>
+<p>I</p>
+<p>ILED</p>
+<p> = 2.5 mA × Code (2) </p>
+<p>where Code is the ILED register setting. Therefore, the ILED </p>
+<p>current can be programmed between 2.5 mA and 17.5 mA, </p>
+<p>using the full range of codes. </p>
+<p>If the HPLED register is set to 0, the HPLED regulator is turned </p>
+<p>off, and no current flows through the high power LED(s). If the </p>
+<p>HPLED register is programmed from 1 (00001 binary) to 11 </p>
+<p>(01011 binary), the regulator is in torch mode, and the HPLED </p>
+<p>remains continuously on, independent of the state of STR. If the </p>
+<p>HPLED register is programmed between 12 (01100 binary) and </p>
+<p>31 (11111 binary), the HPLED regulator remains off until enabled </p>
+<p>through the strobe input (STR) or a software strobe command. </p>
+<p>To program a desired HPLED current with SETF tied high, use </p>
+<p>the following equation: </p>
+<p>I</p>
+<p>HPLED</p>
+<p> = 35 mA + Code × 15 mA  (3) </p>
+<p>where Code is the HPLED register setting.  </p>
+<p>Therefore, the HPLED torch current can be programmed between </p>
+<p>50 mA and 200 mA for Code 1 to Code 11, and the HPLED flash </p>
+<p>current can be programmed between 215 mA and 500 mA for </p>
+<p>Code 12 to Code 31. </p>
+<p>Additionally, the HPLED current can be adjusted with an external </p>
+<p>resistor. This feature is primarily intended for limiting the LED </p>
+<p>flash current in handset applications when the phone’s power </p>
+<p>amplifier transmits, but it can also be used to modify the HPLED </p>
+<p>current settings. If an external SETF resistor is present, the HPLED </p>
+<p>current is given by </p>
+<p>SETF</p>
+<p>HPLED</p>
+<p>R</p>
+<p>CodeI</p>
+<p>k50</p>
+<p>mA)15mA35( ××+=</p>
+<p> (4) </p>
+<h4>TURNING ON THE FLASH AND WATCHDOG TIMER </h4>
+<p>A watchdog timer is always active in flash mode to prevent </p>
+<p>overstress of the HPLED.  </p>
+<p>In 2-bit logic interface mode, users select flash operation by </p>
+<p>setting the CTRL1 pin and the CTRL0 pin high. The watchdog </p>
+<p>timer in this mode is fixed at 0.82 sec. Bringing the CTRLx pins </p>
+<p>to another state terminates the flash. If the state of the CTRLx </p>
+<p>pins remains high for longer than 0.82 sec, flash is automatically </p>
+<p>disabled by the watchdog timer, and the interrupt pin (</p>
+<p>INT</p>
+<p>) </p>
+<p>goes low to indicate a fault.  </p>
+
+ <p>Rev. B | Page 16 of 24 </p>
+<p>In I</p>
+<p>2</p>
+<p>C mode, users select flash operation by programming the </p>
+<p>HPLED register between 12 (01100 binary) and 31 (11111 binary). </p>
+<p>The flash does not turn on until a strobe command is given by </p>
+<p>either pulling the STR pin high or by writing a software strobe </p>
+<p>command to the appropriate I</p>
+<p>2</p>
+<p>C register.  </p>
+<p>There are additional settings for the watchdog timer in I</p>
+<p>2</p>
+<p>C mode. </p>
+<p>The strobe command operates in one of two watchdog timer </p>
+<p>modes, timed flash and user-controlled flash, which are </p>
+<p>controlled via the state of the timeout configuration </p>
+<p>(TMR_CFG) bit of the CONFIG register. If TMR_CFG is set </p>
+<p>(1), the flash operates in timed mode. In timed flash, a rising </p>
+<p>edge on STR turns on the flash. The flash remains on until the </p>
+<p>internal timeout occurs, which is set by the TMR_SET bits of the </p>
+<p>CONFIG register, according to the following equation: </p>
+<p>t</p>
+<p>FLASH</p>
+<p> = 820 ms − Code × 54.6 ms  (5) </p>
+<p>where Code ranges from 0 (0000 binary) to 15 (1111 binary), </p>
+<p>allowing for flash periods ranging from 54 ms to 820 ms.  </p>
+<p>If TMR_CFG is not set (0), the flash operates in user-controlled </p>
+<p>timer mode. In user-controlled timer mode, the flash remains </p>
+<p>on as long as STR is held high. If STR remains high longer than </p>
+<p>T</p>
+<p>FLASH</p>
+<p> (if TMR_SET = 0, t</p>
+<p>FLASH</p>
+<p> = 820 ms), the flash is turned off </p>
+<p>and a fault is set in the watchdog timeout (FLT_TMR) bit of the </p>
+<p>FAULT register.  </p>
+<p>The ADP1653 also offers a software strobe option, allowing the </p>
+<p>user to turn on the flash directly through the I</p>
+<p>2</p>
+<p>C interface without </p>
+<p>pulling the STR pin high. Setting the SW_STROBE register bit </p>
+<p>to 1 initiates a flash cycle. The strobe can operate in either timed </p>
+<p>or user-controlled mode, as previously described. </p>
+<h4>SAFETY FEATURES </h4>
+<h5>Interrupts </h5>
+<p>For critical system conditions, such as output overvoltage, </p>
+<p>watchdog timeout, and overtemperature conditions, the ADP1653 </p>
+<p>indicates that an interrupt event has occurred by asserting the </p>
+<p>active low interrupt output </p>
+<p>INT</p>
+<p>. </p>
+<p>INT</p>
+<p> is an open-drain output </p>
+<p>and should be pulled up to the I/O voltage rail by using a resistor.  </p>
+<p>In I</p>
+<p>2</p>
+<p>C interface mode, the system baseband processor can read </p>
+<p>the fault register through the I</p>
+<p>2</p>
+<p>C interface to determine the nature </p>
+<p>of the fault condition after sensing that </p>
+<p>INT</p>
+<p> has gone low. Users </p>
+<p>can clear a fault by writing 0x00 to the OUT_SEL register. This </p>
+<p>brings </p>
+<p>INT</p>
+<p> high and clears the FAULT register.  </p>
+<p>In 2-bit logic interface mode, </p>
+<p>INT</p>
+<p> goes low for the same fault </p>
+<p>conditions, but I</p>
+<p>2</p>
+<p>C register readback is not available. To clear  </p>
+<p>a fault, set CTRL1 and CTRL0 low. </p>
+<h5>Overvoltage Fault </h5>
+<p>The ADP1653 contains a comparator at the OUT pin that monitors </p>
+<p>the voltage from the high power LED(s) to PGND. If the voltage </p>
+<p>exceeds 10.15 V (typical), the ADP1653 shuts down (I</p>
+<p>Q</p>
+<p> &lt; 45 µA) </p>
+<p>and </p>
+<p>INT</p>
+<p> goes low. In I</p>
+<p>2</p>
+<p>C mode, Bit D0 in the FAULT register </p>
+<p>(FLT_OV) is read back as high. The ADP1653 is disabled, and </p>
+<p>INT</p>
+<p> remains low until the fault is cleared. </p>
+<h5>Timeout Fault </h5>
+<p>If the 2-bit logic interface is used, the maximum duration for </p>
+<p>flash being enabled (CTRL1/CTRL0 =1) is preset to 820 ms.  <br>If CTRL1 and CTRL0 remain high for longer than 820 ms, </p>
+<p>INT</p>
+<p>goes low and the ADP1653 is disabled.  </p>
+<p>In I</p>
+<p>2</p>
+<p>C mode, if TMR_CFG is not set (0), and STR remains high </p>
+<p>for longer than t</p>
+<p>FLASH</p>
+<p> (see Equation 5), </p>
+<p>INT</p>
+<p> goes low and the </p>
+<p>FLT_TMR bit in the FAULT register is read back as high. The </p>
+<p>ADP1653 is disabled, and </p>
+<p>INT</p>
+<p> remains low until the fault is </p>
+<p>cleared. </p>
+<h5>Overtemperature Fault </h5>
+<p>If the junction temperature of the ADP1653 rises above 155°C, </p>
+<p>a thermal protection circuit shuts down the LED driver and </p>
+<p>brings </p>
+<p>INT</p>
+<p> low. In I</p>
+<p>2</p>
+<p>C mode, Bit D2 (FLT_OT) of the FAULT </p>
+<p>register is read back as high. The ADP1653 is disabled, and </p>
+<p>INT</p> <p>remains low until the fault is cleared. </p>
+<h5>Short-Circuit Fault </h5>
+<p>The HPLED pin features short-circuit protection that disables </p>
+<p>the ADP1653 if it detects a short circuit to ground at the cathode </p>
+<p>of the LED(s). The ADP1653 monitors the HPLED voltage once </p>
+<p>the part is enabled in torch mode. If after 820 ms the HPLED </p>
+<p>pin remains grounded, a short circuit is detected. </p>
+<p>INT</p>
+<p> goes low, </p>
+<p>and Bit D3 (FLT_SCP) of the FAULT register is read back as high. </p>
+<p>Avoid false triggering of the Short Circuit Fault by not changing </p>
+<p>the torch current level while the short-circuit detection circuit is </p>
+<p>making a measurement of HPLED pin voltage. Do not change </p>
+<p>torch setting directly between two non-zero torch levels 750 ms </p>
+<p>to 900 ms after the torch has been enabled. To change torch </p>
+<p>mode current level between two non-zero torch levels 750 ms to <br>900 ms after enabling torch mode, use the following sequence: </p>
+<p>Torch Current Setting #1  </p>
+<p>Torch Current Sett ing = 0  </p>
+<p>Torch Current Setting #2 </p>
+<p>Torch mode and flash modes can be enabled or disabled at  </p>
+<p>any time. </p>
+<h5>Input Undervoltage </h5>
+<p>The ADP1653 includes an input undervoltage lockout circuit.  </p>
+<p>If the battery voltage drops below the 2.7 V (typical) input UVLO </p>
+<p>threshold, the ADP1653 shuts down and the input current drops to </p>
+<p>less than 45 µA to prevent deep discharge of the battery. In this </p>
+<p>case, the system register information is lost, and when power is </p>
+<p>reapplied, a power-on reset circuit resets the registers to their </p>
+<p>default conditions. </p>
+<h5>Current Limit </h5>
+<p>The internal LX switch limits battery current by ensuring that </p>
+<p>the peak inductor current does not exceed 2.1 A (typical). If the </p>
+<p>SETI, SETT, or SETF pins accidentally connect to ground, the </p>
+<p>reference current is limited to a maximum of 1 mA. </p>
+
+ <p>Rev. B | Page 17 of 24 </p>
+<h2>APPLICATIONS INFORMATION </h2>
+<h4>FLASH CURRENT FOLDBACK DURING TRANSMIT </h4>
+<h4>PULSE </h4>
+<p>The ADP1653 allows a fast, 1.8 V logic-enabled foldback of the </p>
+<p>flash current, typically enabled shortly before an RF transmit </p>
+<p>pulse. This feature extends the life of the battery by preventing </p>
+<p>overstress of the battery cell. It also extends the life of the phone </p>
+<p>by reducing the maximum instantaneous system current that </p>
+<p>can occur, allowing a lower battery operating voltage limit. </p>
+<h5>2-Bit Logic Interface Mode (INTF = 1) </h5>
+<p>In 2-bit logic interface mode, the flash current is set with an </p>
+<p>external resistor. The 1.22 V reference voltage is buffered to the </p>
+<p>SETF pin, generating a reference current across an external SETF </p>
+<p>resistor. This reference current is multiplied by a fixed gain to </p>
+<p>set the flash current in the HPLED. </p>
+<p>A 1.8 V compatible logic signal selects normal or reduced flash </p>
+<p>current by adjusting the reference current, as shown in </p>
+<p>Figure 29 </p>
+<p>and </p>
+<p>Figure 30. </p>
+<p>SETF</p>
+<p>1.22V</p>
+<p>1.22V</p>
+<p>R1</p>
+<p>R2</p>
+<p>IREF</p>
+<p>1.22V/R1</p>
+<p>1.22V/R2</p>
+<p>CURRENT<br>MIRRORS</p>
+<p>DIGITAL</p>
+<p>OUTPUT</p>
+<p>TxMASK = 0V</p>
+<p>06180-006</p> <p>Figure 29. Flash Mode Current Foldback  </p>
+<p>(Normal Operation with R2 Grounded Through Digital Control Signal) </p>
+<p>Full current flash mode has a reference current of </p>
+<p>R2R1</p>
+<p>R2R1</p>
+<p>R2R1</p>
+<p>I</p>
+<p>0REF</p>
+<p>×</p>
+<p>+×</p>
+<p>==</p>
+<p>)(V22.1</p>
+<p>||</p>
+<p>V22.1</p>
+<p>_</p>
+<p> (6) </p>
+<p>The reference current is multiplied by a fixed gain to give the </p>
+<p>actual flash current (see </p>
+<p>Table 8). </p>
+<p>SETF</p>
+<p>1.22V</p>
+<p>1.22V</p>
+<p>R1</p>
+<p>R2</p>
+<p>IREF</p>
+<p>1.22V/R1</p>
+<p>0.6V/R2</p>
+<p>CURRENT</p>
+<p>MIRRORS</p>
+<p>DIGITAL</p>
+<p>OUTPUT</p>
+<p>TxMASK = 1.8V</p>
+<p>1.8V</p>
+<p>06180-007</p> <p>Figure 30. Flash Mode Current Foldback with 1.8 V Signal Applied to R2 </p>
+<p>A logic high to R2 changes the direction of the current in R2. </p>
+<p>I</p>
+<p>REF</p>
+<p> = I</p>
+<p>R1</p>
+<p> − I</p>
+<p>R2 </p>
+<p>(7) </p>
+<p>R2</p>
+<p>V</p>
+<p>R1</p>
+<p>I</p>
+<p>maskTx</p>
+<p>REF</p>
+<p>V22.1</p>
+<p>V22.1</p>
+<p>−</p>
+<p>−=</p>
+<p> (8) </p>
+<p>I</p>
+<p>HPLED</p>
+<p> = I</p>
+<p>REF</p>
+<p> × 20,800  (9) </p>
+<p>The ratio of full flash current to reduced flash current for  </p>
+<p>a 1.8 V logic signal is approximately </p>
+<p>2</p>
+<p>R1</p>
+<p>R2</p>
+<p>R1R2</p>
+<p>FlashReduced</p>
+<p>FlashFull</p>
+<p>−</p>
+<p>+</p>
+<p>=</p>
+<p> (10) </p>
+<p>If R1 = R2 = 100 kΩ, the maximum flash current is 500 mA, </p>
+<p>and the reduced flash current is 125 mA. </p>
+<h5>I</h5>
+<p>2</p>
+<h5>C Mode (INTF = 0) </h5>
+<p>To allow flash current foldback in I</p>
+<p>2</p>
+<p>C mode, the user should </p>
+<p>connect a resistor between SETF and ground, and another </p>
+<p>resistor from SETF to the logic input, as shown in </p>
+<p>Figure 29 and </p>
+<p>Figure 30. Operation is the same as for the 2-bit logic interface </p>
+<p>mode, except the flash current is additionally scaled by setting </p>
+<p>the HPLED bits in the OUT_SEL register.  </p>
+<p>Full current flash mode (Tx mask = 0 V) has a flash current of </p>
+<p>SETF</p>
+<p>HPLED</p>
+<p>R</p>
+<p>CodeI</p>
+<p>k50</p>
+<p>mA)15mA35( ××+=</p>
+<p> (11) </p>
+<p>where:  </p>
+<p>R</p>
+<p>SETF</p>
+<p> is a parallel combination of R1 and R2. </p>
+<p>Code is the HPLED register setting. </p>
+<p>Bring the Tx mask voltage high for reduced reference current. </p>
+<p>Therefore, the reduced LED current is I</p>
+<p>HPLED</p>
+<p> (see Equation 13). </p>
+<p>R2</p>
+<p>V</p>
+<p>R1</p>
+<p>I</p>
+<p>maskTx</p>
+<p>REF</p>
+<p>V22.1</p>
+<p>V22.1</p>
+<p>−</p>
+<p>−=</p>
+<p> (12) </p>
+<p>V22.1</p>
+<p>k50</p>
+<p>mA)15mA35(</p>
+<p>REF</p>
+<p>HPLED</p>
+<p>I</p>
+<p>CodeI</p>
+<p>×</p>
+<p>××+=</p>
+<p> (13) </p>  
+ <p>Rev. B | Page 18 of 24 </p>
+<h4>EXTERNAL COMPONENT SELECTION </h4>
+<h5>Selecting the Inductor </h5>
+<p>The ADP1653 step-up converter increases the battery voltage to </p>
+<p>allow driving one, two, or three LEDs, whose combined voltage </p>
+<p>drop is higher than the battery voltage plus the 0.32 V (typical) </p>
+<p>current source headroom voltage. This allows the converter to </p>
+<p>regulate the HPLED current over the entire battery voltage range </p>
+<p>and with a wide variation of LED forward voltage. </p>
+<p>Users should choose an inductor value such that the inductor </p>
+<p>ripple current is approximately 2/5th of the maximum dc input </p>
+<p>load current. In general, lower inductance values have higher </p>
+<p>saturation current and lower series resistance for a given physical </p>
+<p>size. For most applications, an inductor in the range of 1.5 µH </p>
+<p>to 3.3 µH works well.  </p>
+<p>To determine the inductor ripple current, users should first </p>
+<p>calculate the switch duty cycle for the step-up converter, which </p>
+<p>is determined by the input voltage (V</p>
+<p>IN</p>
+<p>), output voltage (V</p>
+<p>OUT</p>
+<p>), </p>
+<p>and Schottky forward voltage (V</p>
+<p>F</p>
+<p>). V</p>
+<p>OUT</p>
+<p> equals the LED voltage </p>
+<p>drop plus 320 mV (typical) overhead for the HPLED current </p>
+<p>regulator. </p>
+<p>D</p>
+<p>VV</p>
+<p>V</p>
+<p>F</p>
+<p>OUT</p>
+<p>IN</p>
+<p>−=</p>
+<p>+</p>
+<p>1</p>
+<p> (14) </p>
+<p>Solving for D </p>
+<p>F</p>
+<p>OUT</p>
+<p>INF</p>
+<p>OUT</p>
+<p>F</p>
+<p>OUT</p>
+<p>IN</p>
+<p>VV</p>
+<p>VV</p>
+<table><tr>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+<td>V</td>
+</tr></table>
+<p>D</p>
+<p>+</p>
+<p>−+</p>
+<p>=</p>
+<p>+</p>
+<p>−=</p>
+<p>1</p> <p>The HPLED (output) current is regulated as low as 50 mA </p>
+<p>(torch mode) and as high as 500 mA (flash mode). The </p>
+<p>maximum dc input current is related to the maximum dc </p>
+<p>output current by the following equation: </p>
+<p>ηV</p>
+<p>V</p>
+<p>II</p>
+<p>IN</p>
+<p>OUT</p>
+<p>MAXOUTMAXIN</p>
+<p>1</p>
+<p>)()(</p>
+<p>×</p>
+<p>⎟<br>⎟<br>⎠<br>⎞</p>
+<p>⎜<br>⎜<br>⎝<br>⎛</p>
+<p>×=</p>
+<p> (15) </p>
+<p>where η is efficiency (assume η ≈ 0.80 in the two-LED case).  </p>
+<p>Choose the initial inductor value by using the equation </p>
+<p>⎟<br>⎟<br>⎠<br>⎞</p>
+<p>⎜<br>⎜<br>⎝<br>⎛</p>
+<p>+</p>
+<p>−+</p>
+<p>×Δ</p>
+<p>=</p>
+<p>F</p>
+<p>OUT</p>
+<p>INF</p>
+<p>OUT</p>
+<p>SW</p>
+<p>L</p>
+<p>IN</p>
+<p>VV</p>
+<p>VVV</p>
+<p>fI</p>
+<p>V</p>
+<p>L</p>
+<p> (16) </p>
+<p>where:  </p>
+<p>L is the inductor value (reduce L to reduce solution size). </p>
+<p>f</p>
+<p>SW</p>
+<p> is the switching frequency. </p>
+<p>ΔI</p>
+<p>L</p>
+<p> is the inductor ripple current, typically 2/5th of the </p>
+<p>maximum dc input current. </p>
+<p>V</p>
+<p>F</p>
+<p> is the forward voltage of the Schottky diode. </p>
+<p>The inductor saturation current should be greater than the sum </p>
+<p>of the dc input current and half the inductor ripple current.  </p>
+<p>A reduction in the effective inductance due to saturation increases </p>
+<p>the inductor current ripple but improves loop stability, reducing  </p>
+<p>the amount of output capacitance required. Ensure that the peak </p>
+<p>inductor current (dc + 1/2 of inductor ripple) is less than the  </p>
+<p>LX minimum current limit (1.8 A).  </p>
+<p>Table 9. Recommended Inductors </p>
+<p>Vendor </p>
+<p>Value </p>
+<p>(µH) </p>
+<p>Part No. </p>
+<p>DCR </p>
+<p>(mΩ) </p>
+<p>ISAT </p>
+<p>(A) </p>
+<p>Dimensions </p>
+<p>L × W × H (mm) </p>
+<p>Toko  2.2  FDSE0312  145  3.1  3 × 3 × 1.2 <br>Toko  2.0  DE2812C  67  1.8  2.8 × 2.8 × 1.2 <br>Toko  3.3  FDSE0312  199  2.6  3 × 3 × 1.2 </p>
+<p>Coilcraft  2.2  LPS3010  220  1.4  3 × 3 × 1.0 <br>Coilcraft  2.2  LPS3314  100  1.5  3 × 3 × 1.4 </p>
+<h5>Selecting the Input Capacitor </h5>
+<p>The ADP1653 requires an input bypass capacitor to supply </p>
+<p>transient currents while maintaining constant input and output </p>
+<p>voltage. The input capacitor carries the input ripple current, </p>
+<p>allowing the input power source to supply only the dc current. </p>
+<p>Use an input capacitor with sufficient ripple current rating to </p>
+<p>handle the inductor ripple. A 4.7 µF X5R/X7R ceramic capacitor </p>
+<p>rated for 6.3 V is the minimum recommended input capacitor. </p>
+<p>Increased input capacitance reduces the amplitude of the switching </p>
+<p>frequency ripple on the battery. Because of the dc bias charac-</p>
+<p>teristics of ceramic capacitors, a 0603, 6.3 V X5R/X7R, 10 µF </p>
+<p>ceramic capacitor is preferable. </p>
+<p>Table 10. Recommended Input Capacitors </p>
+<p>Vendor Value  Part No. </p>
+<p>Dimensions </p>
+<p>L × W × H </p>
+<p>(mm) </p>
+<p>Murata  10 μF, 6.3 V  GRM188R60J106ME47  1.6 × 0.8 × 0.8 </p>
+<p>TDK  10 μF, 6.3 V  C1608JB0J106K  1.6 × 0.8 × 0.8 </p>
+<h5>Selecting the Diode </h5>
+<p>The ADP1653 is a nonsynchronous boost and, as such, requires </p>
+<p>an external Schottky rectifier to conduct the inductor current to </p>
+<p>the output capacitor and HPLEDs when the LX switch is off. </p>
+<p>Ensure that the Schottky peak current rating is greater than the </p>
+<p>maximum inductor current. Choose a diode with an average </p>
+<p>current rating that is significantly larger than the maximum <br>LED current. To prevent thermal runaway, derate the Schottky </p>
+<p>rectifier to ensure reliable operation at high junction temperatures. </p>
+<p>To achieve the best efficiency, select a Schottky diode with a low V</p>
+<p>F</p>
+<p>. </p>
+
+ <p>Rev. B | Page 19 of 24 </p>
+<p>Table 11. Recommended Schottky Diodes </p>
+<p>Vendor </p>
+<p>I</p>
+<p>PEAK</p>
+<p>(A) </p>
+<p>I</p>
+<p>AVE</p>
+<p>(A) </p>
+<p>V</p>
+<p>R</p>
+<p>(V) </p>
+<p>Part No. </p>
+<p>Dimensions </p>
+<p>L × W × H (mm) </p>
+<p>ST  2  1  23  BAT20J  1.65 × 1.25 × 1.0 <br>Rohm  5  1  20  RB161VA-20  1.9 × 1.3 × 0.6 </p>
+<p>ON Semi  2  1  20  MBR120LSFT1  2.7 × 1.65 × 0.95 </p>
+<p>Philips  2  2  20  PMEG2020EJ  1.7 × 1.25 × 0.72 </p>
+<h5>Selecting the Output Capacitor </h5>
+<p>The output capacitor maintains the output voltage and supplies </p>
+<p>the HPLED current when the LX switch is on. It also stabilizes </p>
+<p>the loop. A 4.7 µF, 16 V X5R/X7R ceramic capacitor is generally </p>
+<p>recommended. The minimum required capacitance for loop </p>
+<p>stability for the two-LED and one-LED cases is shown in </p>
+<p>Figure 31 </p>
+<p>and </p>
+<p>Figure 32, respectively. Choose a capacitor with a capacitance </p>
+<p>greater than the minimum shown in </p>
+<p>Figure 31 and Figure 32  </p>
+<p>for the worst-case dc bias voltage and temperature condition.  </p>
+<p>Note that dc bias characterization data is available from </p>
+<p>capacitor manufacturers and should be taken into account  <br>when selecting input and output capacitors. 16 V capacitors are </p>
+<p>recommended for most two-LED designs. Designs with 1 mm </p>
+<p>height restrictions can also use 0603 case size, 16 V capacitors </p>
+<p>in parallel. </p>
+<p>Table 12. Recommended Output Capacitors </p>
+<p>Vendor Value  Part No. </p>
+<p>Dimensions </p>
+<p>L × W × H (mm) </p>
+<p>Murata  4.7 μF, 16 V  GRM21BR61C475KA88  2 × 1.25 × 1.25 </p>
+<p>TDK  4.7 μF, 16 V  C2012X5R1C475K  2 × 1.25 × 1.25 </p>
+<p>Murata  4.7 μF, 10 V  GRM219R61A475KE34  2 × 1.25 × 0.95 </p>
+<p>TDK  4.7 μF, 10 V  C1608X5R1A475K  1.6 × 0.8 × 0.8 </p>
+<p>4.5</p>
+<p>0</p>
+<p>05</p>
+<p>HPLED CURRENT, 2 LED CASE (mA)</p>
+<p>MINIMUM CAPACITANCE (µF)</p>
+<p>00</p>
+<p>0</p>
+<p>6180-033</p>
+<p>4.0<br>3.5<br>3.0<br>2.5<br>2.0<br>1.5<br>1.0<br>0.5</p>
+<p>100 200 300 400</p>
+<p>2.2μH+20%</p>
+<p>3.3μH + 20%</p>
+<p>OUT = 6.3V, V</p>
+<p>DD</p>
+<p>=3.2V</p>
+<p>OUT = 8.3V, V</p>
+<p>DD</p>
+<p>=3.2V</p>
+<p>OUT = 6.3V, V</p>
+<p>DD</p>
+<p>=4.2V</p>
+<p>OUT = 8.3V, V</p>
+<p>DD</p>
+<p>=4.2V</p>
+<p>OUT = 6.3V, V</p>
+<p>DD</p>
+<p>=3.2V</p>
+<p>OUT = 8.3V, V</p>
+<p>DD</p>
+<p>=3.2V</p>
+<p>OUT = 6.3V, V</p>
+<p>DD</p>
+<p>=4.2V</p>
+<p>OUT = 8.3V, V</p>
+<p>DD</p>
+<p>=4.2V</p> <p>Figure 31. Minimum Output Capacitance for L = 3.3 µH + 20% and  </p>
+<p>L = 2.2 µH + 20% for Two-LED Designs </p> <p>4.0</p>
+<p>0</p>
+<p>0 500</p>
+<p>HPLED CURRENT, 1 LED CASE (mA)</p>
+<p>MINIMUM CAPACITANCE (µF)</p>
+<p>3.5<br>3.0<br>2.5<br>2.0<br>1.5<br>1.0<br>0.5</p>
+<p>50 100 150 200 250 300 350 400 450</p>
+<p>2.2μH + 20%</p>
+<p>06180-030</p>
+<p>OUT = 3.3V, V</p>
+<p>DD</p>
+<p>=3.2V</p>
+<p>OUT = 4.3V, V</p>
+<p>DD</p>
+<p>=3.2V</p>
+<p>OUT = 4.3V, V</p>
+<p>DD</p>
+<p>=4.2V</p> <p>Figure 32. Minimum Output Capacitance for L = 2.2 µH + 20%  </p>
+<p>for One-LED Design </p> <p>5.0</p>
+<p>0</p>
+<p>01</p>
+<p>DC BIAS (V)</p>
+<p>CAPACITANCE (µF)</p>
+<p>2</p>
+<p>4.5<br>4.0<br>3.5<br>3.0<br>2.5<br>2.0<br>1.5<br>1.0<br>0.5</p>
+<p>246810</p>
+<p>–40°C (10V)</p>
+<p>+85°C (10V)</p>
+<p>0</p>
+<p>6180-008</p> <p>Figure 33. DC Bias Characteristic of a 10 V, 4.7 F Ceramic Capacitor </p>
+
+ <p>Rev. B | Page 20 of 24 </p>
+<h4>PCB LAYOUT  </h4>
+<p>Good PCB layout is important to maximize efficiency and to </p>
+<p>minimize noise and electromagnetic interference (EMI). An </p>
+<p>example PCB layout is shown in </p>
+<p>Figure 34. Refer to the </p>
+<p>following guidelines for adjustments to the suggested layout. </p>
+<p>The high current paths are shown in </p>
+<p>Figure 35. Place components </p>
+<p>that are on high current paths first. To minimize large current <br>loops, place the input capacitor, inductor, Schottky diode, and </p>
+<p>output capacitor as close as possible to each other and to the </p>
+<p>ADP1653 using wide tracks (use shapes where possible).  </p>
+<p>Use separate analog and power ground planes. The analog ground </p>
+<p>plane is used to ground the SETI, SETT, and SETF resistors and </p>
+<p>for any digital connections (that is, INTF = 0 = AGND).  </p>
+<p>Use the power ground plane to ground the power components. </p>
+<p>Connect the input capacitor, output capacitor, and the PGND pin </p>
+<p>(Pin 12) to the PGND plane. If it is not possible to make the PGND </p>
+<p>plane continuous, use a number of low inductance vias to connect </p>
+<p>the planes. Connect the AGND and PGND planes at the paddle </p>
+<p>or close to the paddle of the ADP1653. </p>
+<p>The SETI, SETT, and SETF resistors set a small reference current </p>
+<p>that generates the LED current. To minimize noise and current </p>
+<p>error, connect the SETI, SETT, and SETF resistors as close as </p>
+<p>possible to the ADP1653. Connect the other end of the resistors </p>
+<p>directly to the AGND plane. </p>
+<p>Connect the output capacitor to the high power LED(s), using  </p>
+<p>a wide, low resistance trace. Connect the bottom of the LED string </p>
+<p>back to the HPLED pin (Pin 9) with a wide trace. The GND pin </p>
+<p>(Pin 8) is connected to the source of the current regulator NFET. </p>
+<p>Ensure that there is a low impedance back to the battery for the </p>
+<p>high power LED current by connecting the GND pin to the PGND </p>
+<p>plane with a low impedance via(s) close to the GND pin. </p>
+<p>The OUT pin is used for soft start and contains a comparator </p>
+<p>for overvoltage protection. Connect the output capacitor back </p>
+<p>to the OUT pin (Pin 7) with a direct trace. The trace does not </p>
+<p>need to be wide. </p> <p>INDUCTOR</p>
+<p>V</p>
+<p>IN</p>
+<p>GND</p>
+<p>L1</p>
+<p>C1</p>
+<p>INPUT CAPACITOR</p>
+<p>C2</p>
+<p>OUTPUT CAPACITOR</p>
+<p>SCHOTTKY DIODE</p>
+<p>D1</p>
+<p>HIGH POWER</p>
+<p>LED</p>
+<p>D3</p>
+<p>HIGH POWER</p>
+<p>LED</p>
+<p>D2</p>
+<p>INDICATOR LED</p>
+<p>D4</p>
+<p>SETT RESISTOR</p>
+<p>R6</p>
+<p>SETF RESISTOR</p>
+<p>R5</p>
+<p>Tx MASK RESISTOR</p>
+<p>R4</p>
+<p>SETI RESISTOR</p>
+<p>R7</p>
+<p>ADP1653</p>
+<p>AGND PLANE</p>
+<p>PGND PLANE</p>
+<p>PGND</p>
+<p>PGND</p>
+<p>NOTES</p>
+<p>1. CONNECT THE AGND AND PGND PLANES CLOSE TO PADDLE. THIS IS THE GND RETURN PATH FOR HPLED CURRENT,</p>
+<p>    SO A REASONABLY LARGE VIA SHOULD BE USED TO CONNECT THE AGND AND PGND PLANES.</p>
+<p>06180-034</p>
+<p>SEE</p>
+<p>NOTE 1</p> <p>Figure 34. Example Layout of ADP1653 Driving Two White LEDs, Pink = GND Layer, Gray/Green = Top Layer (a One-LED Layout Is Similar) </p> 
+ <p>Rev. B | Page 21 of 24 </p>
+<p>16 15 14 13</p>
+<p>5 6 7 8</p>
+<p>12<br>11<br>10</p>
+<p>9</p>
+<p>1<br>2<br>3<br>4</p>
+<p>ADP1653</p>
+<p>4.7µF</p>
+<p>4.7µF</p>
+<p>ONE</p>
+<p>OR</p>
+<p>TWO<br>LEDs</p>
+<p>2.2µH</p>
+<p>INPUT VOLT</p>
+<p>A</p>
+<p>GE = 2.75V TO 5.5V</p>
+<p>V</p>
+<p>DD</p>
+<p>Tx MASK</p>
+<p>OPTIONAL</p>
+<p>SETT<br>SETF</p>
+<p>CTRL1/SCL<br>CTRL0/SDA</p>
+<p>E</p>
+<p>N</p>
+<p>S</p>
+<p>TR</p>
+<p>V</p>
+<p>DD</p>
+<p>L</p>
+<p>X</p>
+<p>SETI</p>
+<p>ILED</p>
+<p>OUT</p>
+<p>GND</p>
+<p>PGND</p>
+<p>INTF</p>
+<p>HPLED</p>
+<p>INT</p>
+<p>06180-035</p> <p>Figure 35. Typical Applications Circuit (High Current Lines Are Shown in Bold) </p> 
+ <p>Rev. B | Page 22 of 24 </p>
+<h2>OUTLINE DIMENSIONS </h2> <p>1</p>
+<p>0.50<br>BSC</p>
+<p>0.60 MAX</p>
+<p>P</p>
+<p>I</p>
+<p>N</p> <p>1</p>
+<p>I</p>
+<p>N</p>
+<p>D</p>
+<p>I</p>
+<p>C</p>
+<p>A</p>
+<p>T</p>
+<p>O</p>
+<p>R</p>
+<p>1.50 REF</p>
+<p>0.50<br>0.40<br>0.30</p>
+<p>0.25 MIN</p>
+<p>0.45</p>
+<p>2.75</p>
+<p>BSC SQ</p>
+<p>TOP</p>
+<p>VIEW</p>
+<p>12° MAX</p>
+<p>0.80 MAX<br>0.65 TYP</p>
+<p>SEATING</p>
+<p>PLANE</p>
+<p>PIN 1</p>
+<p>INDICATO</p>
+<p>R</p>
+<p>0.90<br>0.85<br>0.80</p>
+<p>0.30<br>0.23<br>0.18</p>
+<p>0.05 MAX<br>0.02 NOM</p>
+<p>0.20 REF</p>
+<p>3.00</p>
+<p> BSC SQ</p>
+<p>*</p>
+<p>1.65<br>1.50 SQ<br>1.35</p>
+<p>16</p>
+<p>5</p>
+<p>13</p>
+<p>8</p>
+<p>9</p>
+<p>12</p>
+<p>4</p>
+<p>EXPOSED</p>
+<p>PAD</p>
+<p>(BOTTOM VIEW)</p>
+<p>*</p>
+<p>COMPLIANT</p>
+<p>TO</p>
+<p>JEDEC STANDARDS MO-220-VEED-2</p>
+<p>EXCEPT FOR EXPOSED PAD DIMENSION.</p> <p>Figure 36. 16-Lead Lead Frame Chip Scale Package [LFCSP_VQ] </p>
+<p>3 mm × 3 mm Body, Very Thin Quad (CP-16-3)  </p>
+<p>Dimensions shown in millimeters </p> <h4>ORDERING GUIDE </h4>
+<p>Model  Temperature Range  Package Description  Package Option  Branding </p>
+<p>ADP1653ACPZ-R7</p>
+<p>1</p>
+<p>−40°C to +125°C  16-Lead Lead Frame Chip Scale Package [LFCSP_VQ]  CP-16-3  L3H </p>
+<p>ADP1653-EVALZ</p>
+<p>1</p>
+<p> Evaluation Board    </p> <p>1</p>
+<p> Z = RoHS Compliant Part. </p>
+
+ <p>Rev. B | Page 23 of 24 </p>
+<h2>NOTES  </h2>
+
+ <p>Rev. B | Page 24 of 24 </p>
+<h2>NOTES </h2> <p>©2007 Analog Devices, Inc. All rights reserved. Trademarks and  </p>
+<p> registered trademarks are the property of their respective owners. </p>
+<p>   D06180-0-9/07(B) </p>
+
+
+
+
+
+</body>
+</html>
