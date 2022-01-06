@@ -26,9 +26,14 @@ Not a flattening example with fine tuned options, but a realistic default output
 Install
 --------
 Get Python 3 installed along with latest pdf2htmlEX.
-e.g. with Homebrew (docker install of pdf2htmlEX is also supported):
+e.g. with Homebrew:
 
     brew install python3 pdf2htmlEX
+
+Docker install of pdf2htmlEX is also supported (brew one started failing as of late).
+This particular image is tested and used in the default config via ``DOCKER_IMG_TAG``.
+
+    docker pull pdf2htmlex/pdf2htmlex:0.18.8.rc2-master-20200820-ubuntu-20.04-x86_64
 
 Install lxml under python3 ``pip3 install lxml`` or just run the following and get freetype-py too.
 
