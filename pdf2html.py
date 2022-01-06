@@ -34,7 +34,7 @@ def pdf2html(pdf_path):
 
     cmd = (f"{pdf2htm} --embed-external-font 0 {hint}"
            " --process-nontext 0 --embed cfijo"
-           f" --dest-dir {out_dir}/{fn} {pdf_path} {fn}.html")
+           f" --dest-dir {os.path.join(out_dir, fn)} {pdf_path} {fn}.html")
     print()
     print(cmd)
     os.system(cmd)
