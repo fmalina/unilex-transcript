@@ -18,11 +18,10 @@ Read the docstrings for more information.
 Example
 -------
 
-- before https://github.com/fmalina/unilex-transcript/blob/main/tests/PDF/report.pdf
-- after https://github.com/fmalina/unilex-transcript/blob/main/tests/HTM/report.htm
+Not a flattening example with fine tuned options, but a realistic default output to expect with no scripting.
 
-Not a flattening example with fine tuned options, but a realistic default output.
-
+`PDF before <https://github.com/fmalina/unilex-transcript/blob/main/tests/PDF/report.pdf>`_ and
+`semantic HTML after <https://github.com/fmalina/unilex-transcript/blob/main/tests/HTM/report.htm>`_
 
 Install
 --------
