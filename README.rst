@@ -20,8 +20,8 @@ Example
 
 Not a flattening example with fine tuned options, but a realistic default output to expect with no scripting.
 
-`PDF before <https://github.com/fmalina/unilex-transcript/blob/main/tests/PDF/report.pdf>`_ and
-`semantic HTML after <https://github.com/fmalina/unilex-transcript/blob/main/tests/HTM/report.htm>`_
+`PDF before <tests/PDF/report.pdf>`_ and
+`semantic HTML after <tests/HTM/report.htm>`_
 
 Install
 --------
@@ -45,8 +45,8 @@ Configure your project path in your ``.env`` file and ``config.py``
 **most importantly the DATA_DIR**.
 This can be any folder let's say ``DATA_DIR=/path/to/unilex-transcript/tests``.
 If you use a docker install of pdf2htmlEX, you'll need to set ``DOCKER_INSTALL=1``
-This will mount your data dir to Docker path. ``DOCKER_IMG_TAG`` is also configurable.
-See config.py for default.
+This will mount your data dir to Docker path. ``DOCKER_IMG_TAG`` is also
+`configurable <config.py>`_.
 Go ahead create your ``.env`` file and add ``DATA_DIR=...``
 
 Your DATA_DIR should end up containing 3 folders: PDF, HTML and HTM if you
