@@ -18,8 +18,10 @@ Read the docstrings for more information.
 Example
 -------
 
-- before http://reports.ofsted.gov.uk/provider/files/875315/urn/100006.pdf
-- after http://schooletc.co.uk/report/96989#reports
+- before https://github.com/fmalina/unilex-transcript/blob/main/tests/PDF/report.pdf
+- after https://github.com/fmalina/unilex-transcript/blob/main/tests/HTM/report.htm
+
+Not a flattening example with fine tuned options, but a realistic default output.
 
 
 Install
