@@ -18,10 +18,8 @@ Read the docstrings for more information.
 Example
 -------
 
-Not a flattening example with fine tuned options, but a realistic default output to expect with no scripting.
-
-`PDF before <tests/PDF/report.pdf>`_ and
-`semantic HTML after <tests/HTM/report.htm>`_
+`PDF before <tests/PDF/report-100006.pdf>`_ and
+`semantic HTML after <tests/HTM/report-100006.htm>`_
 
 Install
 --------
