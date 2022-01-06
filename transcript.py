@@ -87,7 +87,7 @@ def exists(e): return e is not None
 def remove(e): return parent(e).remove(e)
 
 
-def insert(e, a):
+def insert_after(e, a):
     """Insert element just after another one"""
     return parent(a).insert(parent(a).index(a)+1, e)
 
@@ -120,7 +120,7 @@ def wrap_set(dom, child_tag, parent_tag):
     for e in dom.cssselect(child_tag):
         if nxt != e:
             box = Element(parent_tag)
-            insert(box, e)
+            insert_after(box, e)
         box.append(e)
         nxt = parent(e).getnext()
         if nxt is None:

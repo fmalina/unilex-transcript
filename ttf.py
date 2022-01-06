@@ -25,7 +25,7 @@ If the fonts are unknown, unavailable, or glyphs can't be recognized,
 program will ask the user to recognize the letter shape
 and key in the right symbol.
 It will only ask once for each shape and remember the letter choice
-in a human readable dictionary (dictionary.js).
+in a human readable dictionary (dictionary.json).
 
 The technical reason for random symbols:
 Seemingly random characters are produced when you copy/paste text from PDF
@@ -119,7 +119,7 @@ def char_lookup(fonts):
 
 
 def lookup_user(data, bitmap):
-    dictionary = "dictionary.js"
+    dictionary = "dictionary.json"
     try:
         lookup = json.load(open(dictionary, "r"))
     except ValueError:  # dictionary was empty
