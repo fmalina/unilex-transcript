@@ -69,6 +69,8 @@ Development process
 -------------------
 Set expected (hand-adjusted) output to aim for and
 improve codebase to get transcript output closer to the ideal semantic output.
+Make sure your changes don't make output worse for other tests.
+Use `flake8`.
 
 Dual Licensing
 --------------
