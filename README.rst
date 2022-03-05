@@ -60,6 +60,7 @@ drop your PDFs there.
 Run
 ---
 ``./pdf2html.py``
+
 ``./transcript.py``
 
 When you change configuration within ``./transcript.py`` or tweak some code.
