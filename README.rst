@@ -82,10 +82,10 @@ If you want to use Transcript to develop and run commercial projects and applica
 
 Once purchased, you will be granted a commercial BSD style license and all set to use Transcript in your business.
 
-`Small Team License (£1200) <https://fmalina.github.io/pay.html?amount=1200&msg=Transcript_Team_License>`_
+`Small Team License (£1200) <https://unilexicon.com/fm/pay.html?amount=1200&msg=Transcript_Team_License>`_
 Small Team License for up to 8 developers
 
-`Organization License (£3200) <https://fmalina.github.io/pay.html?amount=3200&msg=Transcript_Organisation_License>`_
+`Organization License (£3200) <https://unilexicon.com/fm/pay.html?amount=3200&msg=Transcript_Organisation_License>`_
 Commercial Organization License for Unlimited developers
 
 Open source license
