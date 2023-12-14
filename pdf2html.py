@@ -24,9 +24,9 @@ def pdf2html(pdf_path):
     # > man pdf2htmlEX
     if config.DOCKER_INSTALL:
         # get the user id and group id of the current user
-        userid = os.getuid()
-        groupid = os.getgid()
-        pdf2htm = f"docker run -ti --rm -v {config.DATA_DIR}:/pdf -w /pdf --user={userid}:{groupid} {config.DOCKER_IMG_TAG}"
+        user_id = os.getuid()
+        group_id = os.getgid()
+        pdf2htm = f"docker run -ti --rm -v {config.DATA_DIR}:/pdf -w /pdf --user={user_id}:{group_id} {config.DOCKER_IMG_TAG}"
         out_dir = '/pdf/HTML'
         pdf_path = pdf_path.replace(config.PDF_DIR, '/pdf/PDF')
         hint = ""
