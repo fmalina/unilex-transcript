@@ -17,29 +17,32 @@ import config
 
 
 def pdf2html(pdf_path):
-    """Generates a long command"""
+    """
+    Process a pdf file at pdf_path and convert it to html.
+    """
 
     fn = Path(pdf_path).name.replace('.pdf', '')
-    # --embed cfijo = don't embed Css, Fonts, Images, Js, Outlines
-    # > man pdf2htmlEX
+    pdf2htm = 'pdf2htmlEX'
+    out_dir = config.HTML_DIR
+    hint = " --external-hint-tool ttfautohint"
+
+    # get the user id and group id of the current user
+    userid = os.getuid()
+    groupid = os.getgid()
+
     if config.DOCKER_INSTALL:
-        pdf2htm = f"docker run -ti --rm -v {config.DATA_DIR}:/pdf -w /pdf {config.DOCKER_IMG_TAG}"
+        pdf2htm = f"docker run -ti --rm -v {config.DATA_DIR}:/pdf -w /pdf --user={userid}:{groupid} {config.DOCKER_IMG_TAG}"
         out_dir = '/pdf/HTML'
         pdf_path = pdf_path.replace(config.PDF_DIR, '/pdf/PDF')
         hint = ""
-    else:
-        pdf2htm = 'pdf2htmlEX'
-        out_dir = config.HTML_DIR
-        hint = " --external-hint-tool ttfautohint"
 
     cmd = (f"{pdf2htm} --embed-external-font 0 {hint}"
            " --process-nontext 0 --embed cfijo"
            f" --dest-dir {os.path.join(out_dir, fn)} {pdf_path} {fn}.html")
-    print()
+
     print(cmd)
     os.system(cmd)
     time.sleep(.2)
-
 
 if __name__ == '__main__':
     os.makedirs(config.HTML_DIR, exist_ok=True)
