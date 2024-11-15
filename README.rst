@@ -70,24 +70,4 @@ Development process
 -------------------
 Set expected (hand-adjusted) output to aim for and
 improve codebase to get transcript output closer to the ideal semantic output.
-Make sure your changes don't make output worse for other tests.
-Use `flake8`.
-
-Dual Licensing
---------------
-
-Commercial license
-~~~~~~~~~~~~~~~~~~
-If you want to use Transcript to develop and run commercial projects and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary.
-
-Once purchased, you will be granted a commercial BSD style license and all set to use Transcript in your business.
-
-`Small Team License (£1200) <https://unilexicon.com/fm/pay.html?amount=1200&msg=Transcript_Team_License>`_
-Small Team License for up to 8 developers
-
-`Organization License (£3200) <https://unilexicon.com/fm/pay.html?amount=3200&msg=Transcript_Organisation_License>`_
-Commercial Organization License for Unlimited developers
-
-Open source license
-~~~~~~~~~~~~~~~~~~~
-If you are creating an open source application under a license compatible with the GNU GPL license v3, you may use Transcript under the terms of the GPLv3.
+Make sure your changes don't make output worse for other tests. Use `ruff`.
